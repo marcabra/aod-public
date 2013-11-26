@@ -1,0 +1,304 @@
+.clearfix, section .sections, section .features, .map_aid_dates, .map_aid_types, section#country #country_overview, section#country #country_browse {
+  zoom: 1; }
+  .clearfix:before, section .sections:before, section .features:before, .map_aid_dates:before, .map_aid_types:before, section#country #country_overview:before, section#country #country_browse:before, .clearfix:after, section .sections:after, section .features:after, .map_aid_dates:after, .map_aid_types:after, section#country #country_overview:after, section#country #country_browse:after {
+    content: "\0020";
+    display: block;
+    height: 0;
+    overflow: hidden; }
+  .clearfix:after, section .sections:after, section .features:after, .map_aid_dates:after, .map_aid_types:after, section#country #country_overview:after, section#country #country_browse:after {
+    clear: both; }
+
+a {
+  color: #006699; }
+
+#container {
+  margin: auto;
+  width: 1000px;
+  color: #8c8c8c;
+  font-family: "museo-sans", arial; }
+
+h1, h2, h3, h4, h5 {
+  font-family: "museo-sans", sans-serif;
+  font-weight: normal; }
+
+.wf-loading h1 {
+  visibility: hidden; }
+
+.wf-active h1 {
+  visibility: visible; }
+
+header.top {
+  position: relative;
+  margin: 0 0 1em 0;
+  border-bottom: 1px solid #FAEFE9; }
+  header.top .primary_links {
+    position: absolute;
+    bottom: 9px;
+    right: 0;
+    text-transform: uppercase;
+    margin: 0;
+    padding: 0; }
+    header.top .primary_links li {
+      display: inline-block;
+      list-style-type: none;
+      margin: 0  0 0 .25em;
+      text-align: center;
+      line-height: 1em;
+      font-family: "museo-sans"; }
+    header.top .primary_links a {
+      display: inline-block;
+      color: white;
+      text-decoration: none;
+      padding: .2em .3em .175em; }
+    header.top .primary_links .sec_organismos {
+      background: #99cc00; }
+    header.top .primary_links .sec_temas {
+      background: #d1632a; }
+    header.top .primary_links .sec_paises {
+      background: #006699; }
+  header.top .secondary_links {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: .7em;
+    margin: 0;
+    padding: 0; }
+    header.top .secondary_links li {
+      list-style-type: none; }
+    header.top .secondary_links a {
+      color: #A2A2A2; }
+
+section#home-intro {
+  margin: 0 0 4em 0; }
+  section#home-intro .home-main-img {
+    margin: 0 0 3em 0; }
+  section#home-intro #main-graph {
+    float: right;
+    margin: 0 0 0 1em; }
+  section#home-intro p.intro {
+    color: #8c8c8c;
+    font-size: 0.7em; }
+  section#home-intro .intro-text {
+    padding: 0 0 1em 2em; }
+    section#home-intro .intro-text h2 {
+      color: #99cc00;
+      margin: 1.25em 0 .2em 0; }
+    section#home-intro .intro-text ul {
+      margin: 0 0 1em 0;
+      padding: 0; }
+    section#home-intro .intro-text li {
+      list-style-type: none;
+      margin: 0 0 .25em 0;
+      padding: 0;
+      font-family: "museo-sans"; }
+
+section#home header h2 {
+  border-top: 1px solid #FAEFE9;
+  padding-top: .5em; }
+section header {
+  color: #D1632A;
+  margin: 0 0 1em 0; }
+  section header h1 {
+    font-size: 1.2em;
+    margin: 2em 0 0 0; }
+  section header h2 {
+    font-weight: bold;
+    margin: .25em 0 0 0; }
+  section header p {
+    margin: 0;
+    font-family: "museo-sans";
+    font-size: 1.3em; }
+section .sections {
+  margin-bottom: 3em; }
+  section .sections .section {
+    float: left;
+    width: 33%;
+    text-align: center; }
+    section .sections .section h3 {
+      font-size: 1.6em;
+      margin: .5em 0 0 0; }
+    section .sections .section p {
+      margin: 0;
+      font: 0.9em "museo-sans"; }
+section .features .feature {
+  width: 198px;
+  height: 188px;
+  float: left;
+  position: relative;
+  margin: 0 2px 10px 0; }
+  section .features .feature img {
+    z-index: 0; }
+  section .features .feature span {
+    position: absolute;
+    background: #000;
+    opacity: .7;
+    z-index: 1;
+    bottom: 0;
+    height: 58px;
+    width: 100%;
+    display: block; }
+  section .features .feature h3 {
+    position: absolute;
+    top: 134px;
+    margin: 0;
+    z-index: 2;
+    padding: 0 .3em;
+    font-size: .9em;
+    font-family: "museo-sans"; }
+    section .features .feature h3 a {
+      color: #FFF; }
+
+.map_aid_dates {
+  float: left; }
+
+.map_aid_types {
+  float: right; }
+
+.data_filter {
+  margin: 1em 0; }
+  .data_filter ul {
+    display: inline-block;
+    margin: 0;
+    padding: 0 .75em;
+    background: #fbf0eb;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px; }
+    .data_filter ul li {
+      display: inline-block; }
+      .data_filter ul li.active {
+        background: #d1632a; }
+        .data_filter ul li.active a {
+          color: #FFF; }
+      .data_filter ul li:hover {
+        background: #d1632a;
+        opacity: .5; }
+        .data_filter ul li:hover a {
+          color: #FFF; }
+      .data_filter ul li a {
+        display: block;
+        padding: .4em .5em .25em .5em;
+        color: #8c8c8c;
+        text-decoration: none; }
+
+ul.tabs {
+  margin: 0;
+  padding: 0 1em; }
+  ul.tabs li {
+    list-style-type: none;
+    display: inline-block;
+    -webkit-border-top-left-radius: 6px;
+    -webkit-border-top-right-radius: 6px;
+    -moz-border-radius-topleft: 6px;
+    -moz-border-radius-topright: 6px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    color: #d1632a;
+    background: #fbf0eb;
+    margin: 0 1em 0 0; }
+    ul.tabs li.active {
+      background: #d1632a; }
+      ul.tabs li.active a {
+        color: white; }
+    ul.tabs li:hover {
+      background: #d1632a;
+      opacity: .5; }
+      ul.tabs li:hover a {
+        color: #FFF; }
+    ul.tabs li a {
+      padding: .75em 1em .5em 1em;
+      display: block;
+      text-decoration: none;
+      color: #d1632a; }
+
+.col-1-3, .col-2-3, .col-3-3 {
+  width: 31%;
+  margin: 0 3% 0 0;
+  float: left; }
+
+.col-3-3 {
+  margin: 0; }
+
+.breadcrumb {
+  font-size: .75em;
+  color: #a2a2a2; }
+  .breadcrumb a {
+    text-decoration: none; }
+
+section#country header {
+  margin: 1em 0 .5em 0; }
+  section#country header h1 {
+    margin: 0;
+    font-size: 3em;
+    font-weight: bold; }
+section#country #country_overview #graph_country {
+  float: right; }
+section#country #country_overview table {
+  width: 400px;
+  font-size: .8em; }
+  section#country #country_overview table th {
+    width: 210px;
+    text-align: right;
+    vertical-align: top;
+    font-weight: normal;
+    padding: 2px 10px 2px 2px;
+    opacity: .8; }
+    section#country #country_overview table th .year_selector {
+      display: inline-block; }
+  section#country #country_overview table td {
+    text-align: left;
+    vertical-align: top;
+    padding: 2px;
+    font-weight: bold; }
+  section#country #country_overview table .main {
+    font-size: 1.8em; }
+section#country #country_overview .year_selector {
+  font-weight: bold; }
+  section#country #country_overview .year_selector a {
+    text-decoration: none; }
+  section#country #country_overview .year_selector .fa-caret-square-o-down {
+    opacity: .5;
+    color: #d1632a; }
+section#country #country_browse h2 {
+  font-size: 1.1em;
+  padding: 0 0 .25em 0;
+  margin-bottom: .5em; }
+  section#country #country_browse h2.countries {
+    border-bottom: 2px solid #006699; }
+  section#country #country_browse h2.proyects {
+    border-bottom: 2px solid #666666; }
+  section#country #country_browse h2.themes {
+    border-bottom: 2px solid #d1632a; }
+  section#country #country_browse h2.organisms {
+    border-bottom: 2px solid #99cc00; }
+section#country #country_browse table, section#country #country_browse ul {
+  font-size: .75em; }
+section#country #country_browse table td {
+  padding: 2px 2px 4px 2px;
+  vertical-align: top; }
+section#country #country_browse ul {
+  padding: 0; }
+section#country #country_browse li {
+  margin-bottom: 1em; }
+section#country #country_browse p.small {
+  font-size: .7em; }
+
+h2.countries {
+  color: #006699; }
+
+h2.proyects {
+  color: #666666; }
+
+h2.themes {
+  color: #d1632a; }
+
+h2.organisms {
+  color: #99cc00; }
+
+section#text_content {
+  padding: 0 15em; }
+
+footer {
+  border-top: 1px solid #FAEFE9;
+  margin: 10em 0;
+  padding: 2em 0; }

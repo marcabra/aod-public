@@ -8,14 +8,18 @@
 
 		<ul class="tabs">
 			<li id="tab_countries" class="active"><a href="">Países</a></li>
-			<li id="tab_regions" ><a href="">Global</a></li>
+			<li id="tab_regions" ><a href="">Regiones</a></li>
 		</ul>
 
 		<section id="map_countries">
 
 			<div style="border: 1px solid red; width: 100%; height: 500px; vertical-align: middle; text-align: center">
 
-				<p style="margin: 8em 0 0 0">[MAPA - <a href="http://developers.cartodb.com/documentation/cartodb-js.html">http://developers.cartodb.com/documentation/cartodb-js.html</a>]</p>
+				<p style="margin: 8em 0 0 0">
+					[MAPA - 
+					<a href="http://developers.cartodb.com/documentation/cartodb-js.html">http://developers.cartodb.com/documentation/cartodb-js.html</a><br>
+					<a href="http://mhkeller.github.io/cartodb-templates/">CartoDB Templates</a>
+				]</p>
 				
 				<p>
 					<a href="?q=paises_pais">Ficha País</a> <br>	
@@ -37,14 +41,9 @@
 				<div class="nav_end"></div>
 			</div>
 
-			<div class="data_filter map_aid_types">
-				Ver: 
-				<ul>
-					<li class="active"><a href="#" class="active">Total</a></li>
-					<li><a href="#">Subvenciones</a></li>
-					<li><a href="#">Créditos</a></li>
-					<li><a href="#">Deuda</a></li>
-				</ul>
+			<div class="data_filter map_aid_types" >
+				Los datos de 2012 no han sido tratados igual que los años anteriores por el Ministerio y por tanto, la cantidad por país es menor. 
+				<a href="?q=acerca_de#datos_2012">Más info</a>
 			</div>
 
 		</section>

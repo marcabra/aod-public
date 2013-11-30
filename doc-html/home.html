@@ -7,8 +7,41 @@
 				<img src="img/home_img_top.jpg" width="1000" height="184">
 			</div>
 
-			<img id="main-graph" src="img/home_graph_1.png" width="447" height="260">
 
+			<div id="main-graph">
+
+
+				<!-- doc: http://www.oesmith.co.uk/morris.js/lines.html -->
+				<div id="graph" style="width: 447px; height: 260px;"></div>
+
+				<script type="text/javascript">
+				Morris.Line({
+				  element: 'graph',
+				  data: [
+				    { y: '2006', a: null	},
+				    { y: '2007', a: 3754	},
+				    { y: '2008', a: 4761	},
+				    { y: '2009', a: 4728	},
+				    { y: '2010', a: 4491	},
+				    { y: '2011', a: 2987	},
+				    { y: '2012', a: 1585 },
+				    { y: '2013', a: null }
+				  ],
+				  xkey: 'y',
+				  ykeys: ['a'],
+				  labels: ['Importe AOD'],
+				  ymax: '5000',
+				  postUnits: 'M€',
+				  xlabels: 'year'
+				  
+				});
+				</script>
+
+				<!-- <img id="main-graph" src="img/home_graph_1.png" width="447" height="260"> -->
+
+			</div>
+				
+				
 			<div class="intro-text">
 
 				<p class="intro">

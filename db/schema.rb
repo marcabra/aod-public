@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131130131658) do
+ActiveRecord::Schema.define(:version => 20131130131933) do
 
   create_table "incomes", :force => true do |t|
     t.integer  "region_id"
@@ -32,5 +32,16 @@ ActiveRecord::Schema.define(:version => 20131130131658) do
   end
 
   add_index "regions", ["name"], :name => "index_regions_on_name"
+
+  create_table "topics", :force => true do |t|
+    t.string   "code"
+    t.string   "name"
+    t.integer  "parent_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "topics", ["code"], :name => "index_topics_on_code"
+  add_index "topics", ["parent_id"], :name => "index_topics_on_parent_id"
 
 end

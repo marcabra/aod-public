@@ -87,12 +87,12 @@ ActiveRecord::Schema.define(:version => 20131130133010) do
   create_table "topics", :force => true do |t|
     t.string   "code"
     t.string   "name"
-    t.integer  "parent_id"
+    t.string   "ancestry"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
+  add_index "topics", ["ancestry"], :name => "index_topics_on_ancestry"
   add_index "topics", ["code"], :name => "index_topics_on_code"
-  add_index "topics", ["parent_id"], :name => "index_topics_on_parent_id"
 
 end

@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'ancestry'
 gem 'enumerize'
 gem 'jquery-rails'
 gem 'pg'

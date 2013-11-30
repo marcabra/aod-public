@@ -3,11 +3,11 @@ class CreateTopics < ActiveRecord::Migration
     create_table :topics do |t|
       t.string :code
       t.string :name
-      t.integer :parent_id
+      t.string :ancestry
 
       t.timestamps
     end
     add_index :topics, :code
-    add_index :topics, :parent_id
+    add_index :topics, :ancestry
   end
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131130132117) do
+ActiveRecord::Schema.define(:version => 20131130132534) do
 
   create_table "agencies", :force => true do |t|
     t.string   "name"
@@ -33,6 +33,33 @@ ActiveRecord::Schema.define(:version => 20131130132117) do
   end
 
   add_index "incomes", ["region_id"], :name => "index_incomes_on_region_id"
+
+  create_table "projects", :force => true do |t|
+    t.integer  "region_id"
+    t.integer  "topic_id"
+    t.string   "title"
+    t.text     "description"
+    t.string   "location"
+    t.string   "started_at"
+    t.string   "ended_at"
+    t.integer  "duration"
+    t.string   "aid_kind"
+    t.string   "aid_via"
+    t.string   "odm"
+    t.string   "meta_odm"
+    t.string   "beneficiaries_kind"
+    t.integer  "beneficiaries_count"
+    t.integer  "beneficiaries_women"
+    t.text     "result"
+    t.string   "intervention_number"
+    t.string   "internal_code"
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
+  end
+
+  add_index "projects", ["region_id"], :name => "index_projects_on_region_id"
+  add_index "projects", ["title"], :name => "index_projects_on_title"
+  add_index "projects", ["topic_id"], :name => "index_projects_on_topic_id"
 
   create_table "regions", :force => true do |t|
     t.string   "name"

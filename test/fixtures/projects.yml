@@ -1,0 +1,41 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  region: 
+  topic: 
+  title: MyString
+  description: MyText
+  location: MyString
+  started_at: MyString
+  ended_at: MyString
+  duration: 1
+  aid_kind: MyString
+  aid_via: MyString
+  odm: MyString
+  meta_odm: MyString
+  beneficiaries_kind: MyString
+  beneficiaries_count: 1
+  beneficiaries_women: 1
+  result: MyText
+  intervention_number: MyString
+  internal_code: MyString
+
+two:
+  region: 
+  topic: 
+  title: MyString
+  description: MyText
+  location: MyString
+  started_at: MyString
+  ended_at: MyString
+  duration: 1
+  aid_kind: MyString
+  aid_via: MyString
+  odm: MyString
+  meta_odm: MyString
+  beneficiaries_kind: MyString
+  beneficiaries_count: 1
+  beneficiaries_women: 1
+  result: MyText
+  intervention_number: MyString
+  internal_code: MyString

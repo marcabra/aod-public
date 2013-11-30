@@ -44,6 +44,8 @@ GEM
       debugger-ruby_core_source (~> 1.2.3)
     debugger-linecache (1.2.0)
     debugger-ruby_core_source (1.2.4)
+    enumerize (0.7.0)
+      activesupport (>= 3.2)
     erubis (2.7.0)
     execjs (2.0.2)
     hike (1.2.3)
@@ -112,6 +114,7 @@ PLATFORMS
 DEPENDENCIES
   coffee-rails (~> 3.2.1)
   debugger
+  enumerize
   jquery-rails
   pg
   rails (= 3.2.12)

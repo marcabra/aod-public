@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131130132534) do
+ActiveRecord::Schema.define(:version => 20131130133010) do
 
   create_table "agencies", :force => true do |t|
     t.string   "name"
@@ -22,6 +22,20 @@ ActiveRecord::Schema.define(:version => 20131130132534) do
   end
 
   add_index "agencies", ["name"], :name => "index_agencies_on_name"
+
+  create_table "aids", :force => true do |t|
+    t.integer  "project_id"
+    t.integer  "agency_id"
+    t.integer  "year"
+    t.decimal  "committed_amount", :precision => 8, :scale => 2, :default => 0.0
+    t.decimal  "paid_amount",      :precision => 8, :scale => 2, :default => 0.0
+    t.datetime "created_at",                                                      :null => false
+    t.datetime "updated_at",                                                      :null => false
+  end
+
+  add_index "aids", ["agency_id"], :name => "index_aids_on_agency_id"
+  add_index "aids", ["project_id"], :name => "index_aids_on_project_id"
+  add_index "aids", ["year"], :name => "index_aids_on_year"
 
   create_table "incomes", :force => true do |t|
     t.integer  "region_id"

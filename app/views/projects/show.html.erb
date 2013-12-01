@@ -1,0 +1,60 @@
+<section id="proyect" class="IDPROYECTO">
+	<section id="proyect_overview">
+		<header>
+			<div class="breadcrumb">
+				<strong>Proyectos</strong> >
+				<%= link_to @project.region.name, @project.region %> > 
+				<%= link_to @project.topic.name, @project.topic %> 
+			</div>
+			<h1>Proyecto: <%= @project.title %></h1>
+		</header>
+
+		<table id="proyect_details">
+		<tr>
+			<th>Comienzo/Fin</th>
+			<td><%= @project.started_at %>-<%= @project.ended_at %></td>
+		</tr>
+		<tr>
+			<th>País/Región</th>
+			<td><%= link_to @project.region.name, @project.region %></td>
+		</tr>
+		<tr>
+			<th>Localización</th>
+			<td><%= @project.location %></td>
+		</tr>
+		<tr>
+			<th>Importe</th>
+			<td><%= number_to_currency @project.committed_amount %></td>
+		</tr>
+		<tr>
+			<th>Tipo de ayuda</th>
+			<td><%= @project.aid_kind %></td>
+		</tr>
+		<tr>
+			<th>Ayuda</th>
+			<td><%= @project.aid_via %></td>
+		</tr>
+		<tr>
+			<th>Organismos</th>
+			<td><%= agencies_link @project %></td>
+		</tr>
+		<tr>
+			<th>Tema</th>
+			<td><%= link_to @project.topic.name, @project.topic %></td>
+		</tr>
+		</table>
+
+		<section class="proyect_description">
+		  <%= @project.description %>
+		</section>
+	</section>
+
+	<section class="browse_other_proyects">
+		<p>Otros proyectos en <%= @project.region.name %></p>
+		<ul>
+		  <% @related_projects.each do |project| %>
+		    <li><%= link_to project.title, project %></li>
+		  <% end %>
+		</ul>
+	</section>
+</section>

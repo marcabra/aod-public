@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'ancestry'
 gem 'enumerize'
+gem 'gon'
 gem 'jquery-rails'
 gem 'pg'
 gem 'rails', '3.2.12'

@@ -1,0 +1,56 @@
+<section id="organisms">
+	<header>
+		<h1>Organismos que dedican recursos a la Ayuda Oficial al Desarrollo</h1>
+	</header>
+
+	<section class="clearfix">
+		<div class="data_filter clearfix">
+			Año: 
+			<ul>
+			  <% (2007..2012).each do |year| %>
+				  <li><%= link_to year, agencies_path(year: year), class: current_year==year ? 'active' : nil %></li>
+				<% end %>
+			</ul>				
+		</div>
+
+		<div class="col-1-4">
+			<h2 class="organisms">Ministerios</h2>
+			<ul>
+			  <% @departments.each do |agency| %>
+		      <li><%= link_to agency.name, agency %></li>
+			  <% end %>
+				<li><a href="?q=paises_pais_dimension">Ver todos</a></li>
+			</ul>
+		</div>
+
+		<div class="col-2-4">
+			<h2 class="organisms">Comunidades Autónomas</h2>			
+			<ul>
+			  <% @regions.each do |agency| %>
+			    <li><%= link_to agency.name, agency %></li>
+			  <% end %>
+				<li><a href="?q=paises_pais_dimension">Ver todos</a></li>
+			</ul>
+		</div>
+
+		<div class="col-3-4">
+			<h2 class="organisms" >Ayuntamientos</h2>
+			<ul>
+			  <% @town_halls.each do |agency| %>
+		      <li><%= link_to agency.name, agency %></li>
+			  <% end %>
+				<li><a href="?q=paises_pais_dimension">Ver todos</a></li>
+			</ul>
+		</div>
+
+		<div class="col-4-4">
+			<h2 class="organisms">Universidades</h2>
+			<ul>
+			  <% @universities.each do |agency| %>
+		      <li><%= link_to agency.name, agency %></li>
+			  <% end %>
+				<li><a href="?q=paises_pais_dimension">Ver todos</a></li>
+			</ul>
+		</div>
+	</section>
+</section>

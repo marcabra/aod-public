@@ -235,12 +235,9 @@ section {
 				}
 			}
 
-
 		}
 	}
 }
-
-
 
 .map_aid_dates {
 	@extend .clearfix;
@@ -381,10 +378,10 @@ section#country {
 			font-weight: bold;
 		}
 	}
-	#country_overview {
+	#overview {
 		@extend .clearfix;
 		margin: 0 0 2em 0;
-		#graph_country {
+		.chart {
 			float: right; 
 			#graph_country_notes {
 				text-align: right; 
@@ -575,8 +572,6 @@ section#text_page {
 		border-top: 0;
 	}
 }
-
-
 
 
 footer { 

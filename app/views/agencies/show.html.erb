@@ -1,0 +1,81 @@
+<section id="country" class="organism">
+	<section id="overview">
+	  <div id="agency_chart" class="chart" style="width:447px; height:260px;"></div>
+
+		<header>
+			<div class="breadcrumb"><%= link_to 'Organismos', agencies_path %> </div>
+			<h1><%= @agency.name %></h1>
+		</header>
+
+		<table>
+		<tr class="main">
+			<th>Ayuda en 
+				<div class="year_selector">
+					<a class="drop_year_selector"><%= current_year %> <i class="fa fa-caret-square-o-down"></i></a>
+					<div id="year_selector_drop">
+						<ul>
+						  <% (2007..2012).each do |year| %>
+						    <li><%= link_to year, agency_path(@agency, year: year) %></li>
+						  <% end %>
+						</ul>
+					</div>
+				</div>				
+			</th>
+			<td><%= number_with_delimiter(@agency.amount(current_year)) %> MM€</td>
+		</tr>
+		<tr>
+			<th>Ranking organismos</th>
+			<td>#<%= @agency.rank(current_year) %></td>
+		</tr>
+		</table>
+	</section>
+
+	<section id="country_browse">
+		<div class="col-1-3">
+			<h2 class="countries" title="Países que más ayudas reciben de este organismo">Países principales</h2>
+			<p class="small">Países que más ayudas reciben   de este organismo</p>
+			<table>
+			  <% @regions.each do |region| %>
+  			<tr>
+  				<td><%= ratio region.amount, @agency.amount(current_year) %></td>
+  				<td><%= link_to region.name, region_path(region.id) %></td>
+  			</tr>
+  			<% end %>
+  			<tr>
+  				<td></td>
+  				<td><a href="#">ver todos</a></td>
+  			</tr>
+			</table>
+		</div>
+
+		<div class="col-2-3">
+			<h2 class="proyects" title="Proyectos principales financiados por este organismo">Proyectos principales</h2>
+			<p class="small">Principales proyectos financiados por este organismo</p>
+
+			<ul>
+			  <% @projects.each do |project| %>
+				  <li><%= link_to project.title, project %></li>
+				<% end %>
+			  <li><a href="#">ver todos</a></li>
+			</ul>
+		</div>
+
+		<div class="col-3-3">
+			<h2 class="themes" title="Temas principales financiados por este organismo">Temas principales</h2>
+			<p class="small">Principales temas financiados por este organismo</p>
+
+			<table>
+			  <% @topics.each do |topic| %>
+  			<tr>
+  				<td><%= ratio topic.amount, @agency.amount(current_year) %></td>
+  				<td><%= link_to topic.name, topic_path(topic.id) %></td>
+  			</tr>
+  			<% end %>
+  			<tr>
+  				<td></td>
+  				<td><a href="#">ver todos</a></td>
+  			</tr>
+			</table>
+		</div>
+	</section>
+</section>

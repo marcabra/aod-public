@@ -9,4 +9,8 @@ class Project < ActiveRecord::Base
   
   #enumerize :aid_kind, in: [:debt, :credit, :grant]
   #enumerize :aid_via, in: [:bilateral, :multilateral, :multibilateral]
+  
+  scope :by_year, lambda { |year| joins(:aids).where("aids.year = ?", year) }
+  scope :group_by_regions, joins(:region).group("regions.id").select("regions.id, regions.name, sum(aids.committed_amount) as amount").order("amount desc")
+  scope :group_by_topics, joins(:topic).group("topics.id").select("topics.id, topics.name, sum(aids.committed_amount) as amount").order("amount desc")
 end

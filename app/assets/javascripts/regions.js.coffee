@@ -1,6 +1,6 @@
-if $('#agency_chart').length
+if $('#region_chart').length
   new Morris.Line
-    element: 'agency_chart'
+    element: 'region_chart'
     data: gon.aids
     xkey: 'year'
     ykeys: ['amount']

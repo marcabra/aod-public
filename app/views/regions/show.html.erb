@@ -1,0 +1,118 @@
+<section id="country"  class="organism">
+	<section id="map_countries">
+		<div style="border: 1px solid red; width: 100%; height: 100px; vertical-align: middle; text-align: center" onclick="$(this).animate({height: '500'},300)">
+			<p style="margin: 2em 0 0 0">[MAP LITE]</p>
+			<!--
+			la idea es sacar el mismo mapa que el de la home de paises, pero colapsado a 100px de altura, 
+			y que cuando hagas click se despliegue para que se muestre íntegro y puedas seguir navegando
+			-->
+		</div>
+	</section>
+
+	<section id="overview">
+	  <div id="region_chart" class="chart" style="width:447px; height:260px;"></div>
+
+		<header>
+			<div class="breadcrumb"><%= link_to 'Países', regions_path %></div>
+			<h1><%= @region.name %></h1>
+		</header>
+
+		<table>
+		<tr class="main">
+			<th>Ayuda bruta en 
+				<div class="year_selector">
+					<a class="drop_year_selector"><%= current_year %> <i class="fa fa-caret-square-o-down"></i></a>
+					<div id="year_selector_drop">
+						<ul>
+						  <% (2007..2012).each do |year| %>
+						    <li><%= link_to year, region_path(@region, year: year) %></li>
+						  <% end %>
+						</ul>
+					</div>
+				</div></th>
+			<td><%= number_to_currency @region.amount(current_year) %></td>
+		</tr>
+		<tr>
+			<th>Bilateral <i class="fa fa-info-circle" title="Wadus Wadus"></i></th>
+			<td><%= number_to_currency @region.amount(current_year, 'bilateral') %></td>
+		</tr>
+		<tr>
+			<th>Multibilateral <i class="fa fa-info-circle" title="Wadus Wadus"></i></th>
+			<td><%= number_to_currency @region.amount(current_year, 'multibilateral') %></td>
+		</tr>
+		<tr>
+			<th>Multilateral <i class="fa fa-info-circle" title="Wadus Wadus"></i></th>
+			<td><%= number_to_currency @region.amount(current_year, 'multilateral') %></td>
+		</tr>
+		<tr class="sep">
+			<th>Créditos reembolsados <i class="fa fa-info-circle" title="Wadus Wadus"></i></th>
+			<td><%= number_to_currency @region.reimbursement_amount(current_year) %></td>
+		</tr>
+		<tr>
+			<th>Ranking países receptores</th>
+			<td>#<%= @region.rank(current_year) %></td>
+		</tr>
+		<tr class="sep">
+			<th>Total 2007-2012</th>
+			<td>
+				<%= number_to_currency @region.grand_total %> <span>(<%= ratio(@region.grand_total, @all_regions_amount) %> del total de la AOD)</span><br>
+				<span class="lite"><%= link_to 'Pon estos datos en contexto (inglés)', "http://spendingstories.org/#/search/?q=#{@region.grand_total * 1000000}&c=EUR" %></span>
+			</td>
+		</tr>
+		</table>
+	</section>
+
+	<section id="country_browse">
+
+		<div class="col-1-3">
+			<h2 class="themes" title="Temas principales en <%= @region.name %>">Temas principales</h2>
+			<p class="small">Cuáles son los temas principales en este país</p>
+			<table>
+			  <% @topics.each do |topic| %>
+  			<tr>
+  				<td><%= ratio topic.amount, @region.amount(current_year) %></td>
+  				<td><%= link_to topic.name, topic_path(topic.id) %></td>
+  			</tr>
+  			<% end %>
+  			<tr>
+  				<td></td>
+  				<td><a href="#">ver todos</a></td>
+  			</tr>
+			</table>
+		</div>
+
+		<div class="col-2-3">
+			<h2 class="proyects" title="Proyectos desarrollados en <%= @region.name %>">Proyectos principales</h2>
+			<p class="small">Cuáles son los proyectos principales desarrollados en este país</p>
+			<table>
+			  <% @projects.each do |project| %>
+  			<tr>
+  				<td><%= number_to_currency project.committed_amount %></td>
+  				<td><%= link_to project.title, project %></td>
+  			</tr>
+  			<% end %>
+  			<tr>
+  				<td></td>
+  				<td><a href="?q=paises_pais_dimension">ver todos</a></td>
+  			</tr>
+			</table>
+		</div>
+
+		<div class="col-3-3">
+			<h2 class="organisms" title="Organismos que canalizan ayuda a <%= @region.name %>">Organismos</h2>
+			<p class="small">Qué organismos aportan más a este país</p>
+			<table>
+			  <% @agencies.each do |agency| %>
+  			<tr>
+  				<td><%= number_to_currency agency.amount %></td>
+  				<td><%= link_to agency.name, agency_path(agency.id) %></td>
+  			</tr>
+  			<% end %>
+  			<tr>
+  				<td></td>
+  				<td><a href="#">ver todos</a></td>
+  			</tr>
+			</table>
+		</div>
+	</section>
+</section>

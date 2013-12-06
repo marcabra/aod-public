@@ -4,4 +4,4 @@ if $('#topic_chart').length
     data: gon.aids
     xkey: 'year'
     ykeys: ['amount']
-    postUnits: 'M€'
+    postUnits: ' M€'

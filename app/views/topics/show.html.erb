@@ -21,7 +21,7 @@
 		<tr class="main">
 			<th>Ayuda en 
 				<div class="year_selector">
-					<a class="drop_year_selector"><%= current_year %><i class="fa fa-caret-square-o-down"></i></a>
+					<a class="drop_year_selector"><%= current_year %> <i class="fa fa-caret-square-o-down"></i></a>
 					<div id="year_selector_drop">
 						<ul>
 						  <% (2007..2012).each do |year| %>
@@ -43,7 +43,7 @@
 
 	<section id="country_browse">
 		<div class="col-1-3">
-			<h2 class="countries" title="Países principales en TEMA">Países principales</h2>
+			<h2 class="countries" title="Países principales en <% @topic.name %>">Países principales</h2>
 			<p class="small">Países que más ayudan reciben para este tema</p>
 			<table>
 			  <% @regions.each do |region| %>
@@ -60,7 +60,7 @@
 		</div>
 
 		<div class="col-2-3">
-			<h2 class="proyects" title="Proyectos principales de TEMA">Proyectos principales</h2>
+			<h2 class="proyects" title="Proyectos principales de <% @topic.name %>">Proyectos principales</h2>
 			<p class="small">Proyectos principales desarrollados en este tema</p>
 			<ul>
 			  <% @projects.each do |project| %>
@@ -71,7 +71,7 @@
 		</div>
 
 		<div class="col-3-3">
-			<h2 class="organisms" title="Organismos que canalizan ayuda a TEMA">Organismos</h2>
+			<h2 class="organisms" title="Organismos que canalizan ayuda a <% @topic.name %>">Organismos</h2>
 			<p class="small">Organismos que más aportan a este tema</p>
 			<table>
 			  <% @agencies.each do |agency| %>

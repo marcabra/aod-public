@@ -4,23 +4,13 @@
 	</header>
 
 	<ul class="tabs">
-		<li id="tab_countries" class="active"><a href="">Países</a></li>
-		<li id="tab_regions" ><a href="">Regiones</a></li>
+		<li id="countries_tab" class="active" data-href="#countries_map"><a href="#">Países</a></li>
+		<li id="regions_tab" data-href="#regions_map"><a href="#">Regiones</a></li>
 	</ul>
 
-	<section id="map_countries">
-		<div style="border: 1px solid red; width: 100%; height: 500px; vertical-align: middle; text-align: center">
-			<p style="margin: 8em 0 0 0">
-				[MAPA - 
-				<a href="http://developers.cartodb.com/documentation/cartodb-js.html">http://developers.cartodb.com/documentation/cartodb-js.html</a><br>
-				<a href="http://mhkeller.github.io/cartodb-templates/">CartoDB Templates</a>
-			]</p>
-			
-			<p>
-				<a href="?q=paises_pais">Ficha País</a> <br>	
-			</p>
-
-		</div>
+	<section id="map">	  
+    <div id="countries_map" style="border: 1px solid red; width: 100%; height: 500px;"></div>
+    <div id="regions_map" style="border: 1px solid red; width: 100%; height: 500px; display:none;"></div>
 
 		<div class="data_filter map_aid_dates">
 			Año: 
@@ -37,6 +27,4 @@
 			<a href="?q=acerca_de#datos_2012">Más info</a>
 		</div>
 	</section>
-
-	<section id="map_regions"></section>
 </section>

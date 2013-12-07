@@ -5,18 +5,20 @@ gem 'enumerize'
 gem 'gon'
 gem 'jquery-rails'
 gem 'pg'
-gem 'rails', '3.2.12'
+gem 'rails', '4.0.1'
 
 group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
-
-  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer', :platforms => :ruby
-
-  gem 'uglifier', '>= 1.0.3'
+  gem 'sass-rails'
+  gem 'coffee-rails'
+  gem 'uglifier'
 end
 
 group :development do
   gem 'debugger'
 end
+
+group :production do
+  gem 'rails_12factor'
+end
+
+ruby '2.0.0'

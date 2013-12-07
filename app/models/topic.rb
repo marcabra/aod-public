@@ -3,8 +3,6 @@ class Topic < ActiveRecord::Base
   has_many :projects
   has_many :aids, through: :projects
   
-  attr_accessible :code, :name, :ancestry
-  
   scope :by_year, lambda { |year| joins(:aids).where("aids.year = ?", year) }
   
   def amount(year)

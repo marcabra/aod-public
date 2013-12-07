@@ -3,8 +3,6 @@ class Agency < ActiveRecord::Base
   has_many :projects, through: :aids
   has_many :regions, through: :projects
   
-  attr_accessible :name, :organism, :organism_kind
-  
   scope :by_kind, lambda { |kind| where("organism_kind = ?", kind) }
   scope :by_year, lambda { |year| joins(:aids).where("aids.year = ?", year) }
   

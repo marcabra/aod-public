@@ -1,17 +1,14 @@
 source 'https://rubygems.org'
 
 gem 'ancestry'
+gem 'coffee-rails'
 gem 'enumerize'
 gem 'gon'
 gem 'jquery-rails'
 gem 'pg'
 gem 'rails', '4.0.1'
-
-group :assets do
-  gem 'sass-rails'
-  gem 'coffee-rails'
-  gem 'uglifier'
-end
+gem 'sass-rails'
+gem 'uglifier'
 
 group :development do
   gem 'debugger'

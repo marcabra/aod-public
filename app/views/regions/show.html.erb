@@ -34,7 +34,7 @@
 		</tr>
 		<tr>
 			<th>Bilateral <i class="fa fa-info-circle" title="Wadus Wadus"></i></th>
-			<td><%= number_to_currency @region.amount(current_year, 'bilateral') %></td>
+			<td><%= number_to_currency @region.amount(current_year, 'Bilateral') %></td>
 		</tr>
 		<tr>
 			<th>Multibilateral <i class="fa fa-info-circle" title="Wadus Wadus"></i></th>
@@ -70,7 +70,7 @@
 			<table>
 			  <% @topics.each do |topic| %>
   			<tr>
-  				<td><%= ratio topic.amount, @region.amount(current_year) %></td>
+  				<td><%= ratio topic.committed_amount, @region.amount(current_year) %></td>
   				<td><%= link_to topic.name, topic_path(topic.id) %></td>
   			</tr>
   			<% end %>
@@ -104,7 +104,7 @@
 			<table>
 			  <% @agencies.each do |agency| %>
   			<tr>
-  				<td><%= number_to_currency agency.amount %></td>
+  				<td><%= number_to_currency agency.committed_amount %></td>
   				<td><%= link_to agency.name, agency_path(agency.id) %></td>
   			</tr>
   			<% end %>

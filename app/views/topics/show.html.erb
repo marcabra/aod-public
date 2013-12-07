@@ -48,7 +48,7 @@
 			<table>
 			  <% @regions.each do |region| %>
   			<tr>
-  				<td><%= ratio region.amount, @topic.amount(current_year) %></td>
+  				<td><%= ratio region.committed_amount, @topic.amount(current_year) %></td>
   				<td><%= link_to region.name, region_path(region.id) %></td>
   			</tr>
   			<% end %>
@@ -62,12 +62,18 @@
 		<div class="col-2-3">
 			<h2 class="proyects" title="Proyectos principales de <% @topic.name %>">Proyectos principales</h2>
 			<p class="small">Proyectos principales desarrollados en este tema</p>
-			<ul>
+			<table>
 			  <% @projects.each do |project| %>
-				  <li><%= link_to project.title, project %></li>
-				<% end %>
-				<li><a href="#">ver todos</a></li>
-			</ul>
+  			<tr>
+  				<td><%= number_to_currency project.committed_amount %></td>
+  				<td><%= link_to project.title, project %></td>
+  			</tr>
+  			<% end %>
+  			<tr>
+  				<td></td>
+  				<td><a href="?q=paises_pais_dimension">ver todos</a></td>
+  			</tr>
+			</table>
 		</div>
 
 		<div class="col-3-3">
@@ -76,7 +82,7 @@
 			<table>
 			  <% @agencies.each do |agency| %>
   			<tr>
-  				<td><%= number_to_currency agency.amount %></td>
+  				<td><%= number_to_currency agency.committed_amount %></td>
   				<td><%= link_to agency.name, agency_path(agency.id) %></td>
   			</tr>
   			<% end %>

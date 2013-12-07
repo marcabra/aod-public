@@ -8,7 +8,7 @@ class CreateProjects < ActiveRecord::Migration
       t.string :location
       t.string :started_at
       t.string :ended_at
-      t.integer :duration
+      t.string :duration
       t.string :aid_kind
       t.string :aid_via
       t.string :odm

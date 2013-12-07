@@ -15,7 +15,7 @@ namespace :import do
   
   desc 'Import projects'
   task :projects => :environment do
-    CSV.foreach("#{Rails.root}/vendor/data/aod_2007.csv", headers: true, col_sep: ';') do |row|
+    CSV.foreach("#{Rails.root}/vendor/data/2011.csv", headers: true, col_sep: ';') do |row|
       topic = Topic.find_by_code(row['topic'])
       if topic.present?
         agency = Agency.find_or_create_by_name(name: row['agency'], organism: row['organism'], organism_kind: row['organism_kind'])
@@ -43,7 +43,11 @@ namespace :import do
             topic: topic)
             
         project.aids.build(agency: agency, year: row['year'], committed_amount: row['committed_amount'], paid_amount: row['committed_amount'])
-        project.save
+        begin
+          project.save
+        rescue Exception => e
+          p "Problem with project #{row['title']}: #{e}"
+        end
       else
         p "Topic #{row['topic']} not valid for project #{row['title']}"
       end

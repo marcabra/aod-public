@@ -8,9 +8,11 @@ class AgenciesController < ApplicationController
 
   def show
     @agency = Agency.find(params[:id])
+
+    @regions = Region.by_agency(@agency, current_year)
+    @topics = Topic.by_agency(@agency, current_year)
     @projects = @agency.projects.by_year(current_year).order("aids.committed_amount desc").limit(5)
-    @regions = @agency.projects.group_by_regions.where("aids.year = ?", current_year).limit(5)
-    @topics = @agency.projects.group_by_topics.where("aids.year = ?", current_year).limit(5)
+
     gon.aids = @agency.aids.group_by_year
   end
 end

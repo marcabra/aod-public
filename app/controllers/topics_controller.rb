@@ -5,9 +5,11 @@ class TopicsController < ApplicationController
 
   def show
     @topic = Topic.find(params[:id])
+    
+    @regions = Region.by_topic(@topic, current_year)
+    @agencies = Agency.by_topic(@topic, current_year)    
     @projects = @topic.projects.by_year(current_year).order_by_amount.limit(5)
-    @regions = @topic.projects.by_year(current_year).group_by_regions.limit(5)
-    @agencies = @topic.projects.by_year(current_year).group_by_agencies.limit(5)
+
     gon.aids = @topic.aids.group_by_year
   end
 end

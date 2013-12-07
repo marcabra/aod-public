@@ -9,46 +9,49 @@
 # from scratch. The latter is a flawed and unsustainable approach (the more migrations
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
-# It's strongly recommended to check this file into your version control system.
+# It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131130133010) do
+ActiveRecord::Schema.define(version: 20131130133010) do
 
-  create_table "agencies", :force => true do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "agencies", force: true do |t|
     t.string   "name"
     t.string   "organism"
     t.string   "organism_kind"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
-  add_index "agencies", ["name"], :name => "index_agencies_on_name"
+  add_index "agencies", ["name"], name: "index_agencies_on_name", using: :btree
 
-  create_table "aids", :force => true do |t|
+  create_table "aids", force: true do |t|
     t.integer  "project_id"
     t.integer  "agency_id"
     t.integer  "year"
-    t.decimal  "committed_amount", :precision => 8, :scale => 2, :default => 0.0
-    t.decimal  "paid_amount",      :precision => 8, :scale => 2, :default => 0.0
-    t.datetime "created_at",                                                      :null => false
-    t.datetime "updated_at",                                                      :null => false
+    t.decimal  "committed_amount", precision: 8, scale: 2, default: 0.0
+    t.decimal  "paid_amount",      precision: 8, scale: 2, default: 0.0
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
-  add_index "aids", ["agency_id"], :name => "index_aids_on_agency_id"
-  add_index "aids", ["project_id"], :name => "index_aids_on_project_id"
-  add_index "aids", ["year"], :name => "index_aids_on_year"
+  add_index "aids", ["agency_id"], name: "index_aids_on_agency_id", using: :btree
+  add_index "aids", ["project_id"], name: "index_aids_on_project_id", using: :btree
+  add_index "aids", ["year"], name: "index_aids_on_year", using: :btree
 
-  create_table "incomes", :force => true do |t|
+  create_table "incomes", force: true do |t|
     t.integer  "region_id"
     t.integer  "year"
     t.string   "code"
     t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
-  add_index "incomes", ["region_id"], :name => "index_incomes_on_region_id"
+  add_index "incomes", ["region_id"], name: "index_incomes_on_region_id", using: :btree
 
-  create_table "projects", :force => true do |t|
+  create_table "projects", force: true do |t|
     t.integer  "region_id"
     t.integer  "topic_id"
     t.string   "title"
@@ -67,32 +70,32 @@ ActiveRecord::Schema.define(:version => 20131130133010) do
     t.text     "result"
     t.string   "intervention_number"
     t.string   "internal_code"
-    t.datetime "created_at",          :null => false
-    t.datetime "updated_at",          :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
-  add_index "projects", ["region_id"], :name => "index_projects_on_region_id"
-  add_index "projects", ["title"], :name => "index_projects_on_title"
-  add_index "projects", ["topic_id"], :name => "index_projects_on_topic_id"
+  add_index "projects", ["region_id"], name: "index_projects_on_region_id", using: :btree
+  add_index "projects", ["title"], name: "index_projects_on_title", using: :btree
+  add_index "projects", ["topic_id"], name: "index_projects_on_topic_id", using: :btree
 
-  create_table "regions", :force => true do |t|
+  create_table "regions", force: true do |t|
     t.string   "name"
     t.string   "area"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
-  add_index "regions", ["name"], :name => "index_regions_on_name"
+  add_index "regions", ["name"], name: "index_regions_on_name", using: :btree
 
-  create_table "topics", :force => true do |t|
+  create_table "topics", force: true do |t|
     t.string   "code"
     t.string   "name"
     t.string   "ancestry"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
-  add_index "topics", ["ancestry"], :name => "index_topics_on_ancestry"
-  add_index "topics", ["code"], :name => "index_topics_on_code"
+  add_index "topics", ["ancestry"], name: "index_topics_on_ancestry", using: :btree
+  add_index "topics", ["code"], name: "index_topics_on_code", using: :btree
 
 end

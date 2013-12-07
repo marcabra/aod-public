@@ -11,3 +11,4 @@
 /log/*.log
 /tmp
 /.ruby-*
+/vendor/data/*

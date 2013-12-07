@@ -7,10 +7,34 @@ class Agency < ActiveRecord::Base
   scope :by_year, lambda { |year| joins(:aids).where("aids.year = ?", year) }
   
   def amount(year)
-    @amount ||= aids.by_year(year).sum(&:committed_amount)
+    @amount ||= aids.by_year(year).sum(:committed_amount)
   end
   
   def rank(year)
     @rank ||= Agency.joins(:aids).where("year = ?", year).group("agencies.id").having("sum(committed_amount) > ?", amount(year).to_f).all.count + 1
   end
+  
+  def self.by_region(region, year)
+    find_by_sql([%Q(select agencies.*, sum(aids.committed_amount) as committed_amount
+      from projects
+      inner join aids on projects.id=aids.project_id
+      inner join agencies on aids.agency_id=agencies.id
+      where projects.region_id = ?
+      and aids.year=?
+      group by agencies.id
+      order by committed_amount 
+      desc limit 5), region, year])
+  end  
+
+  def self.by_topic(topic, year)
+    find_by_sql([%Q(select agencies.*, sum(aids.committed_amount) as committed_amount
+      from projects
+      inner join aids on projects.id=aids.project_id
+      inner join agencies on aids.agency_id=agencies.id
+      where projects.topic_id = ?
+      and aids.year=?
+      group by agencies.id
+      order by committed_amount 
+      desc limit 5), topic, year])
+  end  
 end

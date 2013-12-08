@@ -4,4 +4,5 @@ if $('#topic_chart').length
     data: gon.aids
     xkey: 'year'
     ykeys: ['amount']
+    labels: ['Importe']
     postUnits: ' M€'

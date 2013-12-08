@@ -28,7 +28,7 @@ class Topic < ActiveRecord::Base
   def self.by_agency(agency, year)
     find_by_sql([%Q(select topics.*, sum(aids.committed_amount) as committed_amount
       from topics
-      inner join projects on topics.id = projects.region_id
+      inner join projects on topics.id = projects.topic_id
       inner join aids on projects.id=aids.project_id
       where aids.agency_id=?
       and aids.year=? 

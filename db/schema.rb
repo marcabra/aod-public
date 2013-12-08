@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131130133010) do
+ActiveRecord::Schema.define(version: 20131208195110) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,8 +30,8 @@ ActiveRecord::Schema.define(version: 20131130133010) do
     t.integer  "project_id"
     t.integer  "agency_id"
     t.integer  "year"
-    t.decimal  "committed_amount", precision: 8, scale: 2, default: 0.0
-    t.decimal  "paid_amount",      precision: 8, scale: 2, default: 0.0
+    t.decimal  "committed_amount", precision: 12, scale: 2, default: 0.0
+    t.decimal  "paid_amount",      precision: 12, scale: 2, default: 0.0
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -39,6 +39,20 @@ ActiveRecord::Schema.define(version: 20131130133010) do
   add_index "aids", ["agency_id"], name: "index_aids_on_agency_id", using: :btree
   add_index "aids", ["project_id"], name: "index_aids_on_project_id", using: :btree
   add_index "aids", ["year"], name: "index_aids_on_year", using: :btree
+
+  create_table "geodata", force: true do |t|
+    t.text     "the_geom"
+    t.string   "iso_code"
+    t.string   "name"
+    t.integer  "region"
+    t.integer  "subregion"
+    t.float    "lon"
+    t.float    "lat"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "geodata", ["iso_code"], name: "index_geodata_on_iso_code", using: :btree
 
   create_table "incomes", force: true do |t|
     t.integer  "region_id"
@@ -54,16 +68,16 @@ ActiveRecord::Schema.define(version: 20131130133010) do
   create_table "projects", force: true do |t|
     t.integer  "region_id"
     t.integer  "topic_id"
-    t.string   "title"
+    t.text     "title"
     t.text     "description"
-    t.string   "location"
+    t.text     "location"
     t.string   "started_at"
     t.string   "ended_at"
-    t.integer  "duration"
+    t.string   "duration"
     t.string   "aid_kind"
     t.string   "aid_via"
-    t.string   "odm"
-    t.string   "meta_odm"
+    t.text     "odm"
+    t.text     "meta_odm"
     t.string   "beneficiaries_kind"
     t.integer  "beneficiaries_count"
     t.integer  "beneficiaries_women"
@@ -81,10 +95,12 @@ ActiveRecord::Schema.define(version: 20131130133010) do
   create_table "regions", force: true do |t|
     t.string   "name"
     t.string   "area"
+    t.string   "iso_code"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+  add_index "regions", ["iso_code"], name: "index_regions_on_iso_code", using: :btree
   add_index "regions", ["name"], name: "index_regions_on_name", using: :btree
 
   create_table "topics", force: true do |t|

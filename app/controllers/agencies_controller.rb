@@ -1,8 +1,8 @@
 class AgenciesController < ApplicationController
   def index  
-    @departments = Agency.by_kind('Ministerios').by_year(current_year).uniq.limit(10)
+    @departments = Agency.by_kind('Administración General del Estado').by_year(current_year).uniq.limit(10)
     @regions = Agency.by_kind('Comunidades Autónomas').by_year(current_year).uniq.limit(10)
-    @town_halls = Agency.by_kind('Ayuntamientos').by_year(current_year).uniq.limit(10)
+    @town_halls = Agency.by_kind('Entidades Locales').by_year(current_year).uniq.limit(10)
     @universities = Agency.by_kind('Universidades').by_year(current_year).uniq.limit(10)
   end
 

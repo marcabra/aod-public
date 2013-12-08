@@ -1,15 +1,15 @@
 code;parent_code;name
-100;0;INFRAESTRUCTURAS Y SERVICIOS SOCIALES
+100;;INFRAESTRUCTURAS Y SERVICIOS SOCIALES
 110;100;EDUCACIÓN
 111;110;EDUCACIÓN, NIVEL NO ESPECIFICADO
-111;111;Política educativa y gestión administrativa
-111;111;Servicios e instalaciones educativas y formación
-111;111;Formación de profesores
+11110;111;Política educativa y gestión administrativa
+11120;111;Servicios e instalaciones educativas y formación
+11130;111;Formación de profesores
 11182;111;Investigación educativa
 112;110;EDUCACIÓN BÁSICA
-112;112;Educación primaria
-112;112;Capacitación básica de jóvenes y adultos
-112;112;Educación primera infancia
+11220;112;Educación primaria
+11230;112;Capacitación básica de jóvenes y adultos
+11240;112;Educación primera infancia
 113;110;EDUCACIÓN SECUNDARIA
 11320;113;Educación secundaria
 11330;113;Formación profesional 
@@ -79,7 +79,7 @@ code;parent_code;name
 16062;160;Capacitación estadística
 16063;160;Control de estupefacientes
 16064;160;Mitigación social del VIH / SIDA
-200;0;INFRAESTRUCTURAS Y SERVICIOS ECONÓMICOS
+200;;INFRAESTRUCTURAS Y SERVICIOS ECONÓMICOS
 210;200;TRANSPORTE Y ALMACENAMIENTO
 21010;210;Política de transportes y gestión administrativa
 21020;210;Transporte por carretera
@@ -120,7 +120,7 @@ code;parent_code;name
 250;200;EMPRESAS Y OTROS SERVICIOS
 25010;250;Servicios e instituciones de apoyo a la empresa
 25020;250;Privatizaciones
-300;0;SECTORES PRODUCTIVOS
+300;;SECTORES PRODUCTIVOS
 311;300;AGRICULTURA 
 31110;311;Política agraria y gestión administrativa
 31120;311;Desarrollo agrario
@@ -193,7 +193,7 @@ code;parent_code;name
 33181;331;Educación / formación comercial
 332;300;TURISMO
 33210;332;Política turística y gestión administrativa
-400;0;MULTISECTORIAL
+400;;MULTISECTORIAL
 410;400;PROTECCIÓN GENERAL DEL MEDIO AMBIENTE
 41010;410;Política medioambiental y gestión administrativa
 41020;410;Protección de la biosfera
@@ -209,7 +209,7 @@ code;parent_code;name
 43050;430;Desarrollo alternativo no agrario
 43081;430;Enseñanza / formación multisectoriales
 43082;430;Instituciones científicas y de investigación
-500;0;AYUDA MERC. Y PROGR. GENERALES DE ASISTENCIA
+500;;AYUDA MERC. Y PROGR. GENERALES DE ASISTENCIA
 510;500;APOYO PRESUPUESTARIO GENERAL
 51010;510;Apoyo presupuestario general
 520;500;AYUDA ALIM. PARA EL DES. / SEGURIDAD ALIMENTARIA
@@ -217,7 +217,7 @@ code;parent_code;name
 530;500;OTRAS AYUDAS PARA LA ADQUISICIÓN DE BIENES
 53030;530;Apoyo a la importación (bienes de equipo)
 53040;530;Apoyo a la importación (productos)
-600;0;ACTIVIDADES RELACIONADAS CON LA DEUDA 
+600;;ACTIVIDADES RELACIONADAS CON LA DEUDA 
 60010;600;Actividades relacionadas con la deuda
 60020;600;Condonación de deuda
 60030;600;Alivio de la deuda multilateral
@@ -225,7 +225,7 @@ code;parent_code;name
 60061;600;Canje de deuda por proyectos de desarrollo
 60062;600;Otros tipos de canje de deuda
 60063;600;Recompra de deuda
-700;0;AYUDA DE EMERGENCIA
+700;;AYUDA DE EMERGENCIA
 720;700;AYUDAS DE EMERGENCIA
 72010;720;Ayuda y servicios materiales de emergencia
 72040;720;Ayuda alimentaria de emergencia
@@ -234,10 +234,10 @@ code;parent_code;name
 73010;730;Ayuda a la reconstrucción y rehabilitación
 740;700;PREVENCIÓN DE DESASTRES
 74010;740;Prevención de desastres
-910;0;COSTES ADMINISTRATIVOS DONANTES.
+910;;COSTES ADMINISTRATIVOS DONANTES.
 91010;910;Costes administrativos
-930;0;AYUDA A REFUGIADOS EN EL PAÍS DONANTE
+930;;AYUDA A REFUGIADOS EN EL PAÍS DONANTE
 93010;930;Ayuda a refugiados en el país donante
-998;0;SIN ESPECIFICACIÓN / NO CLASIFICADOS.
+998;;SIN ESPECIFICACIÓN / NO CLASIFICADOS.
 99810;998;Sectores no especificados
 99820;998;Sensibilización sobre los problemas rel. con el desarrollo

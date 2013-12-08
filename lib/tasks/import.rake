@@ -13,9 +13,16 @@ namespace :import do
     end
   end
   
+  desc 'Import Geodata'
+  task :geodata => :environment do
+    CSV.foreach("#{Rails.root}/vendor/data/geodata.csv", headers: true, col_sep: ';') do |row|
+      Geodata.create(the_geom: row['the_geom'], name: row['name'], iso_code: row['iso_code'], region: row['region'], subregion: row['subregion'], lon: row['lon'], lat: row['lat'])
+    end
+  end
+  
   desc 'Import projects'
   task :projects => :environment do
-    CSV.foreach("#{Rails.root}/vendor/data/2011.csv", headers: true, col_sep: ';') do |row|
+    CSV.foreach("#{Rails.root}/vendor/data/2009.csv", headers: true, col_sep: ';') do |row|
       topic = Topic.find_by_code(row['topic'])
       if topic.present?
         agency = Agency.find_or_create_by_name(name: row['agency'], organism: row['organism'], organism_kind: row['organism_kind'])
@@ -49,7 +56,7 @@ namespace :import do
           p "Problem with project #{row['title']}: #{e}"
         end
       else
-        p "Topic #{row['topic']} not valid for project #{row['title']}"
+        p "Topic not valid: #{row['topic']}"
       end
     end
   end

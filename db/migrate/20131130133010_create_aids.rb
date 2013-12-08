@@ -4,8 +4,8 @@ class CreateAids < ActiveRecord::Migration
       t.references :project
       t.references :agency
       t.integer :year
-      t.decimal :committed_amount, precision: 8, scale: 2, default: 0
-      t.decimal :paid_amount, precision: 8, scale: 2, default: 0
+      t.decimal :committed_amount, precision: 12, scale: 2, default: 0
+      t.decimal :paid_amount, precision: 12, scale: 2, default: 0
 
       t.timestamps
     end

@@ -3,16 +3,16 @@ class CreateProjects < ActiveRecord::Migration
     create_table :projects do |t|
       t.references :region
       t.references :topic
-      t.string :title
+      t.text :title
       t.text :description
-      t.string :location
+      t.text :location
       t.string :started_at
       t.string :ended_at
       t.string :duration
       t.string :aid_kind
       t.string :aid_via
-      t.string :odm
-      t.string :meta_odm
+      t.text :odm
+      t.text :meta_odm
       t.string :beneficiaries_kind
       t.integer :beneficiaries_count
       t.integer :beneficiaries_women

@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  the_geom: MyText
+  iso_code: MyString
+  name: MyString
+  region: 1
+  subregion: 1
+  lon: 1.5
+  lat: 1.5
+
+two:
+  the_geom: MyText
+  iso_code: MyString
+  name: MyString
+  region: 1
+  subregion: 1
+  lon: 1.5
+  lat: 1.5

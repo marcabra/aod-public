@@ -1,6 +1,6 @@
 class TopicsController < ApplicationController
   def index
-    @topics = Topic.by_year(current_year)
+    @topics = Topic.by_year(current_year).select("topics.*, sum(aids.committed_amount) as committed_amount").group("topics.id")
   end
 
   def show

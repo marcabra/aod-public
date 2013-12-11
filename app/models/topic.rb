@@ -7,7 +7,7 @@ class Topic < ActiveRecord::Base
   
   def amount(year)
     @amount ||= aids.by_year(year).sum(:committed_amount)
-  end
+  end 
     
   def rank(year)
     @rank ||= Topic.joins(:aids).where("year = ?", year).group("topics.id").having("sum(committed_amount) > ?", amount(year).to_f).all.count + 1

@@ -10,6 +10,6 @@ class RegionsController < ApplicationController
     @agencies = Agency.by_region(@region, current_year)
     @projects = @region.projects.by_year(current_year).order("committed_amount desc").limit(5)
 
-    gon.aids = @region.aids.group_by_year
+    gon.aids = @region.aids.group("year").select("cast(year as varchar), sum(aids.committed_amount) as amount")
   end
 end

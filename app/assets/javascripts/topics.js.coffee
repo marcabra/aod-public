@@ -5,4 +5,4 @@ if $('#topic_chart').length
     xkey: 'year'
     ykeys: ['amount']
     labels: ['Importe']
-    postUnits: ' €'
+    postUnits: ' M€'

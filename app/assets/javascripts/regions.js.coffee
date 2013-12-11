@@ -5,7 +5,7 @@ if $('#region_chart').length
     xkey: 'year'
     ykeys: ['amount']
     labels: ['Importe']
-    postUnits: ' €'
+    postUnits: ' M€'
 
 $("ul.tabs li").bind 'click', () -> 
   current_tab = $('ul li.active')

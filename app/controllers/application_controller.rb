@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  http_basic_authenticate_with :name => "aod", :password => "inprogress"
   protect_from_forgery
   before_filter :set_default_year  
   helper_method :current_year

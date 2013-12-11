@@ -1,28 +1,28 @@
 code;parent_code;name
-100;;INFRAESTRUCTURAS Y SERVICIOS SOCIALES
-110;100;EDUCACIÓN
-111;110;EDUCACIÓN, NIVEL NO ESPECIFICADO
+100;;Infraestructuras y Servicios Sociales
+110;100;Educación
+111;110;Educación, Nivel no especificado
 11110;111;Política educativa y gestión administrativa
 11120;111;Servicios e instalaciones educativas y formación
 11130;111;Formación de profesores
 11182;111;Investigación educativa
-112;110;EDUCACIÓN BÁSICA
+112;110;Educación básica
 11220;112;Educación primaria
 11230;112;Capacitación básica de jóvenes y adultos
 11240;112;Educación primera infancia
-113;110;EDUCACIÓN SECUNDARIA
+113;110;Educación secundaria
 11320;113;Educación secundaria
 11330;113;Formación profesional 
-114;110;EDUCACIÓN POST-SECUNDARIA
+114;110;Educación post-secundaria
 11420;114;Educación universitaria
 11430;114;Formación superior técnica y de dirección
-120;100;SALUD
-121;120;SALUD, GENERAL
+120;100;Salud
+121;120;Salud general
 12110;121;Política sanitaria y gestión administrativa
 12181;121;Enseñanza y formación médicas
 12182;121;Investigación médica
 12191;121;Servicios médicos
-122;120;SALUD BÁSICA
+122;120;Salud básica
 12220;122;Atención sanitaria básica
 12230;122;Infraestructura sanitaria básica
 12240;122;Nutrición básica
@@ -31,45 +31,65 @@ code;parent_code;name
 12262;122;Control de la malaria
 12263;122;Control de la tuberculosis
 12281;122;Formación personal sanitario
-130;100;PROGR. / POLÍTICAS SOBRE POBL. Y SALUD REPR.
+130;100;Programas y políticas sobre población y salud reproductiva
 13010;130;Política sobre población y gestión administrativa
 13020;130;Atención a la salud reproductiva
 13030;130;Planificación familiar
 13040;130;Lucha contra las ETS (Enf. Trans. Sexual), incluido el SIDA
 13081;130;Formación de personal para población y salud reproductiva
-140;100;ABASTECIMIENTO DE AGUA Y SANEAMIENTO
+140;100;Abastecimiento de agua y saneamiento
+14009;140;Política de recursos hídricos y gestión administrativa
 14010;140;Política de recursos hídricos y gestión administrativa
+14014;140;Protección de recursos hídricos (incluida la recolección de datos)
 14015;140;Protección recursos hídricos
+14019;140;Abastecimiento de agua y saneamiento – sistemas de envergadura
 14020;140;Abastecimiento y depuración de agua-sistemas de envergadura
 14021;140;Suministro de agua-sistema de envergadura
 14022;140;Depuración de agua-sistema de envergadura
+14029;140;Abastecimiento de agua potable y saneamiento básico  – sistemas menores
 14030;140;Abastecimiento básico de agua potable y saneamiento básico
 14031;140;Abastecimiento básico de agua potable
 14032;140;Saneamiento básico
+14039;140;Desarrollo cuencas fluviales
 14040;140;Desarrollo cuencas fluviales
+14049;140;Eliminación / tratamiento residuos sólidos
 14050;140;Eliminación / tratamiento residuos sólidos
+14080;140;Educación y formación en abastecimiento de agua y saneamiento
 14081;140;Educación y formación en abastecimiento de agua y saneamiento
-150;100;GOBIERNO Y SOCIEDAD CIVIL
-151;150;GOBIERNO Y SOCIEDAD CIVIL, NO ESPECIFICADO
+150;100;Gobierno y sociedad civil
+151;150;Gobierno y sociedad civil, general
+15109;151;Política de administración y gestión del sector público
 15110;151;Política de administración y gestión del sector público
 15111;151;Gestión financiera del sector público
 15112;151;Descentralización y apoyo a los gobiernos regionales y locales
 15113;151;Organizaciones de lucha contra la corrupción de las instituciones
+15120;151;Gestión financiera sector público
+15129;151;Desarrollo legal y judicial
 15130;151;Desarrollo legal y judicial
+15140;151;Administración pública
+15149;151;La participación democrática y la sociedad civil
 15150;151;Fortalecimiento de la sociedad civil
 15151;151;Procesos electorales
 15152;151;Legislaturas y partidos políticos
 15153;151;Medios de comunicación y el libre flujo de información
-15162;151;Derechos humanos
-15170;151;Organizaciones e instit. de la igualdad de las mujeres
-152;150;PREV. Y RESOL. DE CONFLICTOS, PAZ Y SEGURIDAD
+15160;151;Derechos Humanos
+15161;151;Derechos humanos
+15162;151;Derechos Humanos
+15163;151;Libertad de información
+15164;151;Organizaciones e instituciones de la igualdad de las mujeres
+15169;151;Organizaciones e instituciones de la igualdad de las mujeres
+15170;151;Organizaciones e institutos de la igualdad de las mujeres
+152;150;Previsión y resolución de conflictos, paz y seguridad
+15209;152;Gestión y reforma de los sistemas de seguridad
 15210;152;Gestión y reforma de los sistemas de seguridad
+15219;152;Construcción de la paz y prevención y solución de conflictos
 15220;152;Construcción de la paz y prevención de conflictos
+15229;152;Procesos de consolidación de la paz tras los conflictos (Naciones Unidas)
 15230;152;Procesos de consolidación de la paz tras conflictos (NNUU)
-15240;152;Desmovilización y control de la prolif. armas ligeras (SALW)
+15240;152;Desmovilización y control de la proliferación de armas ligeras (SALW)
 15250;152;Retirada de minas antipersonas
 15261;152;Niños soldados: prevención y desmovilización
-160;100;OTROS SERVICIOS E INFRAESTRUCTURAS SOCIALES
+160;100;Otros servicios e infraestructuras sociales
 16010;160;Seguridad social, servicios sociales
 16020;160;Política de empleo y gestión administrativa
 16030;160;Política de vivienda y gestión administrativa
@@ -79,8 +99,8 @@ code;parent_code;name
 16062;160;Capacitación estadística
 16063;160;Control de estupefacientes
 16064;160;Mitigación social del VIH / SIDA
-200;;INFRAESTRUCTURAS Y SERVICIOS ECONÓMICOS
-210;200;TRANSPORTE Y ALMACENAMIENTO
+200;;Infraestructuras y servicios económicos
+210;200;Transporte y almacenamiento
 21010;210;Política de transportes y gestión administrativa
 21020;210;Transporte por carretera
 21030;210;Transporte por ferrocarril
@@ -88,12 +108,12 @@ code;parent_code;name
 21050;210;Transporte aéreo
 21061;210;Almacenamiento
 21081;210;Enseñanza y formación en transporte y almacenamiento
-220;200;COMUNICACIONES
+220;200;Comunicaciones
 22010;220;Política de comunicaciones y gestión administrativa
 22020;220;Telecomunicaciones
 22030;220;Radio, televisión, prensa
 22040;220;Tecnologías de la información y de la comunicación (TIC)
-230;200;GENERACIÓN Y SUMINISTRO DE ENERGÍA. 
+230;200;Generación y suministro de energía
 23010;230;Política energética y gestión administrativa
 23020;230;Producción energética: fuentes no renovables
 23030;230;Producción energética: fuentes renovables
@@ -111,17 +131,17 @@ code;parent_code;name
 23070;230;Biomasa
 23081;230;Educación, formación en temas energéticos
 23082;230;Investigación energética
-240;200;SERVICIOS BANCARIOS Y FINANCIEROS
+240;200;Servicios bancarios y financieros
 24010;240;Política financiera y gestión administrativa
 24020;240;Instituciones monetarias
 24030;240;Intermediarios financieros del sector formal
 24040;240;Intermediarios financieros semi-formales, informales
 24081;240;Enseñanza / formación en banca y servicios financieros
-250;200;EMPRESAS Y OTROS SERVICIOS
+250;200;Empresas y otros servicios
 25010;250;Servicios e instituciones de apoyo a la empresa
 25020;250;Privatizaciones
-300;;SECTORES PRODUCTIVOS
-311;300;AGRICULTURA 
+300;;Sectores productivos
+311;300;Agricultura
 31110;311;Política agraria y gestión administrativa
 31120;311;Desarrollo agrario
 31130;311;Tierras cultivables
@@ -140,20 +160,20 @@ code;parent_code;name
 31193;311;Servicios financieros agrícolas
 31194;311;Cooperativas agrícolas
 31195;311;Servicios veterinarios
-312;300;SILVICULTURA
+312;300;Silvicultura
 31210;312;Política forestal y gestión administrativa
 31220;312;Desarrollo forestal
 31261;312;Producción de carbón vegetal / leña
 31281;312;Educación, formación forestal
 31282;312;Investigación en silvicultura
 31291;312;Servicios forestales
-313;300;PESCA
+313;300;Pesca
 31310;313;Política pesquera y gestión administrativa
 31320;313;Desarrollo pesquero
 31381;313;Educación, formación pesquera
 31382;313;Investigación pesquera
 31391;313;Servicios pesqueros
-321;300;INDUSTRIA
+321;300;Industria
 32110;321;Política industrial y gestión administrativa
 32120;321;Desarrollo industrial
 32130;321;Desarrollo de PYMES
@@ -171,7 +191,7 @@ code;parent_code;name
 32171;321;Construcción mecánica y eléctrica
 32172;321;Material de transporte
 32182;321;Investigación y desarrollo tecnológico
-322;300;INDUSTRIAS EXTRACTIVAS
+322;300;Industrias extractivas
 32210;322;Política de las industrias extractivas y gestión administrativa
 32220;322;Prospección de minerales y exploración
 32261;322;Carbón
@@ -182,19 +202,19 @@ code;parent_code;name
 32266;322;Minerales industriales
 32267;322;Fertilizantes minerales
 32268;322;Recursos minerales en fondos marinos
-323;300;CONSTRUCCIÓN
+323;300;Construcción
 32310;323;Política de construcción y gestión administrativa
-331;300;COMERCIO
+331;300;Comercio
 33110;331;Política comercial y gestión administrativa
 33120;331;Fomento del comercio
 33130;331;Acuerdos comerciales regionales
 33140;331;Negociaciones comerciales multilaterales
 33150;331;Ajustes vinculados al comercio
 33181;331;Educación / formación comercial
-332;300;TURISMO
+332;300;Turismo
 33210;332;Política turística y gestión administrativa
-400;;MULTISECTORIAL
-410;400;PROTECCIÓN GENERAL DEL MEDIO AMBIENTE
+400;;Multisectorial
+410;400;Protección general del medio ambiente
 41010;410;Política medioambiental y gestión administrativa
 41020;410;Protección de la biosfera
 41030;410;Biodiversidad
@@ -202,22 +222,22 @@ code;parent_code;name
 41050;410;Control / prevención de inundaciones
 41081;410;Educación / formación medioambiental
 41082;410;Investigación medioambiental
-430;400;OTROS MULTISECTORIAL
+430;400;Otros multisectorial
 43010;430;Ayuda multisectorial
 43030;430;Desarrollo y gestión urbanos
 43040;430;Desarrollo rural
 43050;430;Desarrollo alternativo no agrario
 43081;430;Enseñanza / formación multisectoriales
 43082;430;Instituciones científicas y de investigación
-500;;AYUDA MERC. Y PROGR. GENERALES DE ASISTENCIA
-510;500;APOYO PRESUPUESTARIO GENERAL
+500;;Ayuda merc. y progr. generales de asistencia
+510;500;Apoyo presupuestario general
 51010;510;Apoyo presupuestario general
-520;500;AYUDA ALIM. PARA EL DES. / SEGURIDAD ALIMENTARIA
+520;500;Ayuda alim. para el des. / seguridad alimentaria
 52010;520;Ayuda Alimentaria / Programas de seguridad alimentaria
-530;500;OTRAS AYUDAS PARA LA ADQUISICIÓN DE BIENES
+530;500;Otras ayudas para la adquisición de bienes
 53030;530;Apoyo a la importación (bienes de equipo)
 53040;530;Apoyo a la importación (productos)
-600;;ACTIVIDADES RELACIONADAS CON LA DEUDA 
+600;;Actividades relacionadas con la deuda 
 60010;600;Actividades relacionadas con la deuda
 60020;600;Condonación de deuda
 60030;600;Alivio de la deuda multilateral
@@ -225,19 +245,23 @@ code;parent_code;name
 60061;600;Canje de deuda por proyectos de desarrollo
 60062;600;Otros tipos de canje de deuda
 60063;600;Recompra de deuda
-700;;AYUDA DE EMERGENCIA
-720;700;AYUDAS DE EMERGENCIA
+700;;Ayuda de emergencia
+720;700;Ayudas de emergencia
 72010;720;Ayuda y servicios materiales de emergencia
 72040;720;Ayuda alimentaria de emergencia
 72050;720;Coordinación de los servicios de protección de la ayuda
-730;700;AYUDA A LA RECONSTRUCCIÓN Y REHABILITACIÓN
+730;700;Ayuda a la reconstrucción y rehabilitación
 73010;730;Ayuda a la reconstrucción y rehabilitación
-740;700;PREVENCIÓN DE DESASTRES
+740;700;Prevención de desastres
 74010;740;Prevención de desastres
-910;;COSTES ADMINISTRATIVOS DONANTES.
+910;;Costes administrativos donantes
 91010;910;Costes administrativos
-930;;AYUDA A REFUGIADOS EN EL PAÍS DONANTE
+920;;Apoyo a organizaciones no gubernamentales (ONG)
+92010;920;Apoyo a ONG nacionales
+92020;920;Apoyo a ONG internacionales
+92030;920;Apoyo a ONG locales y regionales
+930;;Ayuda a refugiados en el país donante
 93010;930;Ayuda a refugiados en el país donante
-998;;SIN ESPECIFICACIÓN / NO CLASIFICADOS.
+998;;Sin especificación / No clasificados
 99810;998;Sectores no especificados
-99820;998;Sensibilización sobre los problemas rel. con el desarrollo
+99820;998;Sensibilización sobre los problemas relacionados con el desarrollo

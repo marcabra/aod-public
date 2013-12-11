@@ -16,7 +16,7 @@ namespace :import do
   desc 'Import Geodata'
   task :geodata => :environment do
     CSV.foreach("#{Rails.root}/vendor/data/geodata.csv", headers: true, col_sep: ';') do |row|
-      Geodata.create(the_geom: row['the_geom'], name: row['name'], iso_code: row['iso_code'], region: row['region'], subregion: row['subregion'], lon: row['lon'], lat: row['lat'])
+      Geodata.create(the_geom: row['the_geom'], name: row['name'], iso_code: row['iso2'], region: row['region'], subregion: row['subregion'], lon: row['lon'], lat: row['lat'])
     end
   end
   

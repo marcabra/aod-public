@@ -3,20 +3,22 @@
 		<h1>Países destinatarios de la Ayuda Oficial al Desarrollo</h1>
 	</header>
 
+  <!--
 	<ul class="tabs">
 		<li id="countries_tab" class="active" data-href="#countries_map"><a href="#">Países</a></li>
 		<li id="regions_tab" data-href="#regions_map"><a href="#">Regiones</a></li>
 	</ul>
+	-->
 
 	<section id="map">	  
     <div id="countries_map" style="border: 1px solid red; width: 100%; height: 500px;"></div>
-    <div id="regions_map" style="border: 1px solid red; width: 100%; height: 500px; display:none;"></div>
+    <!--<div id="regions_map" style="border: 1px solid red; width: 100%; height: 500px; display:none;"></div>-->
 
 		<div class="data_filter map_aid_dates">
 			Año: 
 			<ul>
 			  <% (2007..2012).each do |year| %>
-				  <li><%= link_to year, regions_path(year: year), class: current_year==year ? 'active' : nil %></li>
+				  <li><%= link_to year, regions_path(year: year), data: { year: year }, class: "year_selector #{'active' if current_year==year}" %></li>
 				<% end %>
 			</ul>			
 			<div class="nav_end"></div>

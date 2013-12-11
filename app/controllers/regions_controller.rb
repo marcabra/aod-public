@@ -1,5 +1,6 @@
 class RegionsController < ApplicationController
   def index
+    gon.current_year = current_year
   end
 
   def show

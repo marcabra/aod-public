@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131208195110) do
+ActiveRecord::Schema.define(version: 20131216213604) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 20131208195110) do
     t.decimal  "paid_amount",      precision: 12, scale: 2, default: 0.0
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.decimal  "returned_amount",  precision: 12, scale: 2, default: 0.0
   end
 
   add_index "aids", ["agency_id"], name: "index_aids_on_agency_id", using: :btree
@@ -109,6 +110,7 @@ ActiveRecord::Schema.define(version: 20131208195110) do
     t.string   "ancestry"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "ancestry_depth", default: 0
   end
 
   add_index "topics", ["ancestry"], name: "index_topics_on_ancestry", using: :btree

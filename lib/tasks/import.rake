@@ -4,12 +4,7 @@ namespace :import do
   desc 'Import CRS codes'
   task :crs => :environment do
     CSV.foreach("#{Rails.root}/vendor/data/crs.csv", headers: true, col_sep: ';') do |row|
-      ancestry = Topic.find_by_code(row['parent_code'])
-      if ancestry
-        Topic.create(code: row['code'], name: row['name'], ancestry: ancestry.id)
-      else
-        Topic.create(code: row['code'], name: row['name'])
-      end
+      Topic.create(code: row['code'], name: row['name'], parent: Topic.find_by_code(row['parent_code']))
     end
   end
   
@@ -22,7 +17,7 @@ namespace :import do
   
   desc 'Import projects'
   task :projects => :environment do
-    CSV.foreach("#{Rails.root}/vendor/data/2009.csv", headers: true, col_sep: ';') do |row|
+    CSV.foreach("#{Rails.root}/vendor/data/2011.csv", headers: true, col_sep: ';') do |row|
       topic = Topic.find_by_code(row['topic'])
       if topic.present?
         agency = Agency.find_or_create_by_name(name: row['agency'], organism: row['organism'], organism_kind: row['organism_kind'])
@@ -49,7 +44,7 @@ namespace :import do
             region: region,
             topic: topic)
             
-        project.aids.build(agency: agency, year: row['year'], committed_amount: row['committed_amount'], paid_amount: row['committed_amount'])
+        project.aids.build(agency: agency, year: row['year'], committed_amount: row['committed_amount'], paid_amount: [row['paid_amount'].to_f, 0].max, returned_amount: [row['paid_amount'].to_f, 0].min.abs)
         begin
           project.save
         rescue Exception => e

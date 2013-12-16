@@ -23,8 +23,16 @@
 			<td><%= @project.location %></td>
 		</tr>
 		<tr>
-			<th>Importe</th>
+			<th>Créditos comprometidos</th>
 			<td><%= number_to_currency @project.committed_amount %></td>
+		</tr>
+		<tr>
+			<th>Créditos abonados</th>
+			<td><%= number_to_currency @project.paid_amount %></td>
+		</tr>
+		<tr>
+			<th>Créditos reembolsados</th>
+			<td><%= number_to_currency @project.returned_amount %></td>
 		</tr>
 		<tr>
 			<th>Tipo de ayuda</th>

@@ -1,6 +1,7 @@
 class TopicsController < ApplicationController
   def index
-    @topics = Topic.by_year(current_year).select("topics.*, sum(aids.committed_amount) as committed_amount").group("topics.id")
+    # @topics = Topic.by_year(current_year).select("topics.*, sum(aids.committed_amount) as committed_amount").group("topics.id")
+    @topics = Topic.roots
   end
 
   def show
@@ -10,6 +11,6 @@ class TopicsController < ApplicationController
     @agencies = Agency.by_topic(@topic, current_year)    
     @projects = @topic.projects.by_year(current_year).order_by_amount.limit(5)
 
-    gon.aids = @topic.aids.group("year").select("cast(year as varchar), sum(aids.committed_amount) as amount")
+    gon.aids = @topic.aids.group("year").select("cast(year as varchar), sum(aids.paid_amount) as amount")
   end
 end

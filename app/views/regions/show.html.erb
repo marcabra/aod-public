@@ -40,7 +40,7 @@
 		</tr>
 		<tr class="sep">
 			<th>Créditos reembolsados <i class="fa fa-info-circle" title="Wadus Wadus"></i></th>
-			<td><%= number_to_currency @region.reimbursement_amount(current_year) %></td>
+			<td><%= number_to_currency @region.returned_amount(current_year) %></td>
 		</tr>
 		<tr>
 			<th>Ranking países receptores</th>
@@ -64,7 +64,7 @@
 			<table>
 			  <% @topics.each do |topic| %>
   			<tr>
-  				<td><%= ratio topic.committed_amount, @region.amount(current_year) %></td>
+  				<td><%= ratio topic.paid_amount, @region.amount(current_year) %></td>
   				<td><%= link_to topic.name, topic_path(topic.id) %></td>
   			</tr>
   			<% end %>
@@ -81,7 +81,7 @@
 			<table>
 			  <% @projects.each do |project| %>
   			<tr>
-  				<td><%= number_to_currency project.committed_amount %></td>
+  				<td><%= number_to_currency project.paid_amount %></td>
   				<td><%= link_to project.title, project %></td>
   			</tr>
   			<% end %>
@@ -98,7 +98,7 @@
 			<table>
 			  <% @agencies.each do |agency| %>
   			<tr>
-  				<td><%= number_to_currency agency.committed_amount %></td>
+  				<td><%= number_to_currency agency.paid_amount %></td>
   				<td><%= link_to agency.name, agency_path(agency.id) %></td>
   			</tr>
   			<% end %>

@@ -79,11 +79,23 @@ section#home-intro {
   section#home-intro #main-graph {
     float: right;
     margin: 0 0 0 1em; }
+    section#home-intro #main-graph #graph {
+      position: relative; }
+      section#home-intro #main-graph #graph #graph_difference {
+        position: absolute;
+        top: 90px;
+        right: -45px;
+        background: #F5FAE5;
+        color: #d1632a;
+        font-size: 1.8em;
+        font-weight: bold;
+        padding: .25em .5em;
+        border-radius: 10px; }
   section#home-intro p.intro {
     color: #8c8c8c;
     font-size: 0.7em; }
   section#home-intro .intro-text {
-    padding: 0 0 1em 2em; }
+    padding: 1em 0 1em 2em; }
     section#home-intro .intro-text h2 {
       color: #99cc00;
       margin: 1.25em 0 .2em 0; }
@@ -364,6 +376,15 @@ section#proyect section.proyect_description {
   section#proyect section.proyect_description p {
     margin-top: 0; }
 
+#map_regions table {
+  border-collapse: collapse; }
+  #map_regions table td {
+    text-align: right;
+    border: 1px solid #CCC;
+    padding: 2px 2px 2px 6px; }
+  #map_regions table td.s3 {
+    text-align: left; }
+
 h2.countries {
   color: #006699; }
 
@@ -379,6 +400,9 @@ h2.organisms {
 section#text_page section#text_content {
   width: 42em;
   float: right; }
+section#text_page .to_the_top {
+  margin: 1em 0 2em;
+  font-size: .8em; }
 section#text_page .nav {
   font-size: .8em;
   line-height: 1.6em;
@@ -423,3 +447,13 @@ footer {
 
 body .ui-tooltip {
   border-width: 2px; }
+
+.media_logos {
+  float: right;
+  padding-top: 14px; }
+
+.twitter-share-button {
+  height: 25px; }
+
+.social_links {
+  margin: 2em 0; }

@@ -34,16 +34,16 @@
   		<%= render 'layouts/nav' %>
 
   		<ul class="secondary_links">
-  			<li><a href="?q=acerca_de">Acerca de este proyecto</a></li>
+  		  <li><%= link_to 'Acerca de este proyecto', page_path('about') %></li>
   		</ul>
   	</header>
     
     <%= yield %>
     
   	<footer id="footer"> 
-  		<a href="?q=acerca_de">Acerca de</a> ·
-  		<a href="?q=acerca_de#contacto">Contacto</a>
-
+  	  <%= link_to 'Acerca de', page_path('about') %> ·
+  	  <%= link_to 'Contacto', "#{page_path('about')}#contacto" %>
+  	  
   		<%= render 'layouts/nav' %>
 
   		<div class="logos_colabs">

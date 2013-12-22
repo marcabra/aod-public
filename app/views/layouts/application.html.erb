@@ -30,8 +30,7 @@
 <body>
   <div id="container">
   	<header class="top">
-  		<a href="?q=home"><img src="/assets/logo_site.png" width="475" height="57"></a>
-
+  	  <%= link_to image_tag('logo_site.png', size: '475x57'), root_path %>
   		<%= render 'layouts/nav' %>
 
   		<ul class="secondary_links">
@@ -49,9 +48,9 @@
 
   		<div class="logos_colabs">
   			<p>Proyecto desarrollado con el apoyo de:</p>
-  			<a href="http://journalismgrants.org/"><img src="/assets/logo_colab_1.png" width="130" height="46"></a>
-  			<a href="http://www.gatesfoundation.org/"><img src="/assets/logo_colab_2.png" width="130" height="46"></a>
-  			<a href="http://ejc.net/"><img src="/assets/logo_colab_3.png" width="130" height="46"></a>
+  			<%= link_to image_tag('logo_colab_1.png', size: '130x46'), 'http://journalismgrants.org/' %>
+  			<%= link_to image_tag('logo_colab_2.png', size: '130x46'), 'http://www.gatesfoundation.org/' %>
+  			<%= link_to image_tag('logo_colab_3.png', size: '130x46'), 'http://ejc.net/' %>
   		</div>
   	</footer>
   </div>

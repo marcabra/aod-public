@@ -51,6 +51,7 @@ GEM
     gon (4.1.1)
       actionpack (>= 2.3.0)
       json
+    high_voltage (2.0.0)
     hike (1.2.3)
     i18n (0.6.9)
     jbuilder (1.5.3)
@@ -127,6 +128,7 @@ DEPENDENCIES
   debugger
   enumerize
   gon
+  high_voltage
   jbuilder (~> 1.2)
   jquery-rails
   pg

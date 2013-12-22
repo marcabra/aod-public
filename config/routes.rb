@@ -4,5 +4,8 @@ Aod::Application.routes.draw do
   resources :topics, only: [:index, :show]
   resources :projects, only: [:show]
 
-  root :to => 'regions#index'
+  # pages
+  get '/home', to: redirect('/')
+
+  root to: 'high_voltage/pages#show', id: 'home'
 end

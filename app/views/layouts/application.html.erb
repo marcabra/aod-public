@@ -28,6 +28,8 @@
   <%= include_gon %>
 </head>
 <body>
+  <%= render 'layouts/facebook' %>
+  
   <div id="container">
   	<header class="top">
   	  <%= link_to image_tag('logo_site.png', size: '475x57'), root_path %>
@@ -43,7 +45,8 @@
   	<footer id="footer"> 
   	  <%= link_to 'Acerca de', page_path('about') %> ·
   	  <%= link_to 'Contacto', "#{page_path('about')}#contacto" %>
-  	  
+  		
+  		<%= render 'layouts/social' %>
   		<%= render 'layouts/nav' %>
 
   		<div class="logos_colabs">

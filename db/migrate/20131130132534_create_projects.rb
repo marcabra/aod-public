@@ -13,9 +13,9 @@ class CreateProjects < ActiveRecord::Migration
       t.string :aid_via
       t.text :odm
       t.text :meta_odm
-      t.string :beneficiaries_kind
-      t.integer :beneficiaries_count
-      t.integer :beneficiaries_women
+      t.text :beneficiaries_kind
+      t.text :beneficiaries_count
+      t.text :beneficiaries_women
       t.text :result
       t.string :intervention_number
       t.string :internal_code

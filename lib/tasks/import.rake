@@ -17,7 +17,7 @@ namespace :import do
   
   desc 'Import projects'
   task :projects => :environment do
-    CSV.foreach("#{Rails.root}/vendor/data/2011.csv", headers: true, col_sep: ';') do |row|
+    CSV.foreach("#{Rails.root}/vendor/data/2007.csv", headers: true, col_sep: ';') do |row|
       topic = Topic.find_by_code(row['topic'])
       if topic.present?
         agency = Agency.find_or_create_by_name(name: row['agency'], organism: row['organism'], organism_kind: row['organism_kind'])

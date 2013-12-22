@@ -1,43 +1,295 @@
-<section id="countries">
 
-	<header>
-		<h1>Países destinatarios de la Ayuda Oficial al Desarrollo</h1>
-	</header>
 
-	<ul class="tabs">
-		<li id="tab_countries" class="active"><a href="">Países</a></li>
-		<li id="tab_regions" ><a href="">Regiones</a></li>
-	</ul>
+	<section id="countries">
 
-	<section id="map_countries">
+		<header>
+			<h1>Paises destinatarios de la Ayuda Oficial al Desarrollo</h1>
+		</header>
 
-		<div style="border: 1px solid red;">
-      <section id="regions_map" style="width: 100%; height: 500px;"></section>
-		</div>
+		<ul class="tabs">
+			<li id="tab_countries" class="active"><a href="javascript:void(0);">Países</a></li>
+			<li id="tab_regions" ><a href="javascript:void(0);">Regiones</a></li>
+		</ul>
 
-		<div class="data_filter map_aid_dates">
-			Año: 
-			<ul>
-				<li><a href="#">2007</a></li>
-				<li><a href="#">2008</a></li>
-				<li><a href="#">2009</a></li>
-				<li><a href="#">2010</a></li>
-				<li><a href="#">2011</a></li>
-				<li class="active"><a href="#" >2012</a></li>
-			</ul>
-			
-			<div class="nav_end"></div>
-		</div>
+		<section id="map_countries">
 
-		<div class="data_filter map_aid_types" >
-			Los datos de 2012 no han sido tratados igual que los años anteriores por el Ministerio y por tanto, la cantidad por país es menor. 
-			<a href="?q=acerca_de#datos_2012">Más info</a>
-		</div>
+			<div style="border: 1px solid red; width: 100%; height: 500px; vertical-align: middle; text-align: center">
+
+				<p style="margin: 8em 0 0 0">
+					[MAPA - 
+					<a href="http://developers.cartodb.com/documentation/cartodb-js.html">http://developers.cartodb.com/documentation/cartodb-js.html</a><br>
+					<a href="http://mhkeller.github.io/cartodb-templates/">CartoDB Templates</a>
+				]</p>
+				
+				<p>
+					<a href="?q=paises_pais">Ficha País</a> <br>	
+				</p>
+
+			</div>
+
+			<div class="data_filter map_aid_dates">
+				Año: 
+				<ul>
+					<li><a href="#">2007</a></li>
+					<li><a href="#">2008</a></li>
+					<li><a href="#">2009</a></li>
+					<li><a href="#">2010</a></li>
+					<li><a href="#">2011</a></li>
+					<li class="active"><a href="#" >2012</a></li>
+				</ul>
+				
+				<div class="nav_end"></div>
+			</div>
+
+			<div class="data_filter map_aid_types" >
+				Los datos de 2012 no han sido tratados igual que los años anteriores por el Ministerio y por tanto, la cantidad por país es menor. 
+				<a href="?q=acerca_de#datos_2012">Más info</a>
+			</div>
+
+		</section>
+
+		<section id="map_regions" style="display: none; ">
+
+			<div style="border: 1px solid #D1632A; width: 100%; padding: 3em; font-size: .8em; ">
+
+			<table dir='ltr' border=0 cellpadding=0 cellspacing=0 class='tblGenFixed' id='tblMain'>
+		   
+		   <tr dir='ltr'>
+		      
+		      <th  class='s0'>
+		      <th  class='s1'>2007
+		      <th  class='s1'>2008
+		      <th  class='s1'>2009
+		      <th  class='s1'>2010
+		      <th  class='s1'>2011
+		      <th  class='s1'>2012
+		      <th  dir='ltr' class='s2'>Total general
+		   </tr>
+		   <tr dir='ltr'>
+		      
+		      <td  dir='ltr' class='s3'>PAÍSES EN VÍAS DE DESARROLLO
+		      <td  class='s4'>990,883,986.39
+		      <td  class='s5'>811,837,617.77
+		      <td  class='s5'>758,655,309.12
+		      <td  class='s5'>895,604,598.65
+		      <td  class='s5'>547,890,302.38
+		      <td  class='s5'>1,027,768,304.62
+		      <td  class='s5'>5,032,640,118.95
+		   </tr>
+		   <tr dir='ltr'>
+		      
+		      <td  dir='ltr' class='s3'>AMÉRICA
+		      <td  class='s4'>124,582,009.78
+		      <td  class='s5'>492,045,818.45
+		      <td  class='s5'>200,346,842.48
+		      <td  class='s5'>292,437,549.82
+		      <td  class='s5'>118,294,857.02
+		      <td  class='s5'>11,974,812.66
+		      <td  class='s5'>1,239,681,890.21
+		   </tr>
+		   <tr dir='ltr'>
+		      
+		      <td  dir='ltr' class='s3'>AMÉRICA DEL NORTE, CENTRAL Y CARIBE
+		      <td  class='s4'>84,132,153.94
+		      <td  class='s5'>31,487,425.31
+		      <td  class='s5'>19,519,310.24
+		      <td  class='s5'>28,734,616.86
+		      <td  class='s5'>24,433,510.33
+		      <td  class='s5'>32,242,833.60
+		      <td  class='s5'>220,549,850.29
+		   </tr>
+		   <tr dir='ltr'>
+		      
+		      <td  dir='ltr' class='s3'>PAÍSES DE LA CARICOM
+		      <td  class='s6'>
+		      <td  class='s5'>1,583,162.19
+		      <td  class='s5'>1,072,000.00
+		      <td  class='s5'>1,153,969.64
+		      <td  class='s5'>2,504,254.95
+		      <td  class='s5'>486,764.27
+		      <td  class='s5'>6,800,151.06
+		   </tr>
+		   <tr dir='ltr'>
+		      
+		      <td  dir='ltr' class='s3'>AMÉRICA DEL SUR
+		      <td  class='s4'>45,281,905.67
+		      <td  class='s5'>24,523,074.51
+		      <td  class='s5'>17,886,136.22
+		      <td  class='s5'>25,241,788.87
+		      <td  class='s5'>63,350,227.54
+		      <td  class='s5'>3,229,462.73
+		      <td  class='s5'>179,512,595.53
+		   </tr>
+		   <tr dir='ltr'>
+		      
+		      <td  dir='ltr' class='s3'>EUROPA
+		      <td  class='s4'>61,198,322.76
+		      <td  class='s5'>30,948,758.67
+		      <td  class='s5'>20,646,754.96
+		      <td  class='s5'>24,066,346.29
+		      <td  class='s5'>38,532,307.37
+		      <td  class='s5'>732,752.26
+		      <td  class='s5'>176,125,242.31
+		   </tr>
+		   <tr dir='ltr'>
+		      
+		      <td  dir='ltr' class='s3'>ESTADOS DE LA EX-YUGOSLAVIA
+		      <td  class='s6'>
+		      <td  class='s6'>
+		      <td  class='s5'>1,384,261.97
+		      <td  class='s5'>293,633.84
+		      <td  class='s5'>592,210.78
+		      <td  class='s5'>1,670.04
+		      <td  class='s5'>2,271,776.64
+		   </tr>
+		   <tr dir='ltr'>
+		      
+		      <td  dir='ltr' class='s3'>MEDITERRÁNEO
+		      <td  class='s4'>241,200.00
+		      <td  class='s6'>
+		      <td  class='s6'>
+		      <td  class='s6'>
+		      <td  class='s6'>
+		      <td  class='s5'>1,518,775.63
+		      <td  class='s5'>1,759,975.63
+		   </tr>
+		   <tr dir='ltr'>
+		      
+		      <td  dir='ltr' class='s3'>ÁFRICA
+		      <td  class='s4'>123,937,263.24
+		      <td  class='s5'>121,027,315.41
+		      <td  class='s5'>116,992,397.08
+		      <td  class='s5'>74,263,770.78
+		      <td  class='s5'>22,123,178.53
+		      <td  class='s5'>11,118,932.36
+		      <td  class='s5'>469,462,857.39
+		   </tr>
+		   <tr dir='ltr'>
+		      
+		      <td  dir='ltr' class='s3'>MAGREB
+		      <td  class='s4'>2,092,520.00
+		      <td  class='s5'>300,000.00
+		      <td  class='s5'>1,138,190.63
+		      <td  class='s5'>626,155.00
+		      <td  class='s5'>3,500.00
+		      <td  class='s5'>491,946.13
+		      <td  class='s5'>4,652,311.76
+		   </tr>
+		   <tr dir='ltr'>
+		      
+		      <td  dir='ltr' class='s3'>NORTE DE ÁFRICA
+		      <td  class='s4'>47,787,248.73
+		      <td  class='s5'>18,486,912.78
+		      <td  class='s5'>11,564,057.23
+		      <td  class='s5'>22,744,668.17
+		      <td  class='s5'>100,565,678.20
+		      <td  class='s5'>2,364,325.26
+		      <td  class='s5'>203,512,890.37
+		   </tr>
+		   <tr dir='ltr'>
+		      
+		      <td  dir='ltr' class='s3'>ÁFRICA SUBSAHARIANA
+		      <td  class='s4'>470,943,814.96
+		      <td  class='s5'>64,968,921.83
+		      <td  class='s5'>134,123,849.11
+		      <td  class='s5'>188,075,151.47
+		      <td  class='s5'>50,276,092.88
+		      <td  class='s5'>22,981,831.09
+		      <td  class='s5'>931,369,661.34
+		   </tr>
+		   <tr dir='ltr'>
+		      
+		      <td  dir='ltr' class='s3'>ASIA, NO ESPECIFICADOS
+		      <td  class='s4'>28,436,304.62
+		      <td  class='s5'>53,003,393.44
+		      <td  class='s5'>17,799,211.08
+		      <td  class='s5'>11,871,974.66
+		      <td  class='s5'>29,952,676.99
+		      <td  class='s5'>40,604.00
+		      <td  class='s5'>141,104,164.80
+		   </tr>
+		   <tr dir='ltr'>
+		      
+		      <td  dir='ltr' class='s3'>ORIENTE MEDIO
+		      <td  class='s4'>27,721,209.66
+		      <td  class='s5'>25,230,821.36
+		      <td  class='s5'>8,449,944.46
+		      <td  class='s5'>9,075,871.24
+		      <td  class='s5'>10,501,787.07
+		      <td  class='s5'>846,237.04
+		      <td  class='s5'>81,825,870.83
+		   </tr>
+		   <tr dir='ltr'>
+		      
+		      <td  dir='ltr' class='s3'>ASIA ORIENTAL
+		      <td  class='s4'>37,650,175.01
+		      <td  class='s5'>7,987,482.54
+		      <td  class='s5'>320,236.51
+		      <td  class='s5'>15,056,394.47
+		      <td  class='s5'>361,890.08
+		      <td  class='s5'>25,468.11
+		      <td  class='s5'>61,401,646.71
+		   </tr>
+		   <tr dir='ltr'>
+		      
+		      <td  dir='ltr' class='s3'>ASIA CENTRAL
+		      <td  class='s4'>22,588,341.53
+		      <td  class='s5'>1,877,804.08
+		      <td  class='s5'>2,212,252.65
+		      <td  class='s5'>8,462,626.14
+		      <td  class='s5'>1,835,062.53
+		      <td  class='s5'>83,942.94
+		      <td  class='s5'>37,060,029.87
+		   </tr>
+		   <tr dir='ltr'>
+		      
+		      <td  dir='ltr' class='s3'>ASIA SUR
+		      <td  class='s4'>54,736,880.07
+		      <td  class='s5'>737,465.58
+		      <td  class='s5'>1,043,593.84
+		      <td  class='s5'>10,036,656.94
+		      <td  class='s5'>1,812,693.83
+		      <td  class='s5'>349,051.07
+		      <td  class='s5'>68,716,341.33
+		   </tr>
+		   <tr dir='ltr'>
+		      
+		      <td  dir='ltr' class='s3'>OCEANÍA
+		      <td  class='s4'>4,608,052.11
+		      <td  class='s5'>3,691,621.78
+		      <td  class='s5'>1,972,653.43
+		      <td  class='s5'>5,506,199.73
+		      <td  class='s5'>1,212,534.13
+		      <td  class='s5'>90,474.23
+		      <td  class='s5'>17,081,535.41
+		   </tr>
+		   <tr dir='ltr'>
+		      
+		      <td  class='s7'>
+		      <td  class='s8'>
+		      <td  class='s6'>
+		      <td  class='s6'>
+		      <td  class='s6'>
+		      <td  class='s6'>
+		      <td  class='s6'>
+		      <td  class='s6'>
+		   </tr>
+		   <tr dir='ltr'>
+		      
+		      <td  dir='ltr' class='s3'>Total general
+		      <td  class='s5'>2,126,821,388.47
+		      <td  class='s5'>1,689,737,595.70
+		      <td  class='s5'>1,315,127,001.00
+		      <td  class='s5'>1,613,251,972.58
+		      <td  class='s5'>1,014,242,764.62
+		      <td  class='s5'>1,116,348,188.04
+		      <td  class='s5'>8,875,528,910.41
+		   </tr>
+		</table>
+
+
+
+		</section>
 
 	</section>
 
-</section>
-
-<script>
-  cartodb.createVis('regions_map', 'http://documentation.cartodb.com/api/v2/viz/2b13c956-e7c1-11e2-806b-5404a6a683d5/viz.json');
-</script>

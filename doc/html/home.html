@@ -1,7 +1,25 @@
-	
+	<style type="text/css">.primary_links { display: none; } </style>
+
+	<?php if($_GET['subs'] == 'true') { ?>
+
+		<div style="padding: 2em; background: #FFFFCC; text-align: center; margin: 1em 0 ">
+
+			<p>Estupendo, te mantendremos al tanto. Mientras, puedes compartir!
+
+				<a href="https://twitter.com/share" class="twitter-share-button" data-lang="es" data-hashtags="ayudaaldesarrollo">Twittear</a>
+				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+				<div class="fb-like" data-href="http://ayudaaldesarrollo.es" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+
+			</p>
+
+		</div>
+
+	<?php } ?>
+
 	<section id="home">
 
-		<section id="home-intro">
+		<section id="home-intro" class="clearfix">
 		
 			<div class="home-main-img">
 				<img src="img/home_img_top.jpg" width="1000" height="184">
@@ -12,7 +30,9 @@
 
 
 				<!-- doc: http://www.oesmith.co.uk/morris.js/lines.html -->
-				<div id="graph" style="width: 447px; height: 260px;"></div>
+				<div id="graph" style="width: 420px; height: 260px;">
+					<div id="graph_difference">-67%</div>
+				</div>
 
 				<script type="text/javascript">
 				Morris.Line({
@@ -20,7 +40,7 @@
 				  data: [
 				    { y: '2006', a: null	},
 				    { y: '2007', a: 3754	},
-				    { y: '2008', a: 4761	},
+				    { y: '2008', a: 4762	},
 				    { y: '2009', a: 4728	},
 				    { y: '2010', a: 4491	},
 				    { y: '2011', a: 2987	},
@@ -29,7 +49,7 @@
 				  ],
 				  xkey: 'y',
 				  ykeys: ['a'],
-				  labels: ['Importe AOD'],
+				  labels: ['Importe AOD neta'],
 				  ymax: '5000',
 				  postUnits: 'M€',
 				  xlabels: 'year'
@@ -45,21 +65,18 @@
 			<div class="intro-text">
 
 				<p class="intro">
-					Ayuda Oficial al Desarrollo (AOD) es la ayuda que los paieses desarrollados dedican para perimitir el desarrollo de los paises wadus wadus   
-					<a href="?q=acerca_de">leer más</a>
+					La Ayuda Oficial al Desarrollo (AOD) es el dinero que los países industrializados como España dan a los países en vías de desarrollo para que luchen contra la pobreza.    
+					<a href="?q=acerca_de">Leer más</a>
 				</p>
 
-
-				<h2>En 2008 España dio 123MM€ de AOD</h2>
+				<h2>En 2008 España dio 4.762 MM € de AOD neta</h2>
 				<ul>
-					<li>Paises simialres como Italia dieron 156MM€ en 2008</li>
-					<li>España estaba en 2008 en el puesto n123 de paises ayudantes</li>
+					<li>Y estaba en el puesto número 7 de países donantes</li>					
 				</ul>
 
-				<h2>En 2012 la aportación de España bajo un 78%</h2>
+				<h2>En 2012 la aportación de España bajó un 67%</h2>
 				<ul>
-					<li>45 paises han dejado de recibir la ayuda</li>
-					<li>España es el país que más ha reducido sus ayudas </li>
+					<li>Ni siquiera Grecia, Irlanda o Portugal han recortado tanto</li>
 				</ul>
 
 			</div>
@@ -69,38 +86,38 @@
 		<section>
 
 			<header>
-				<h2>¿Qué ha pasado con la ayuda? ¿Quien la recibe? ¿Dónde ha bajado más?</h2>
-				<p>Mira los datos tu mismo</p>
+				<h2>¿Qué ha pasado con la ayuda? ¿Quién la recibe? ¿Dónde ha bajado más?</h2>
+				<p>Próximamente podrás mirar los datos tú mismo</p>
 			</header>
 
-			<div class="sections">
+			Suscríbete a nuestra lista de correo para que te informemos cuando esté listo.
 
-				<div class="section">
-					<a href="?q=paises"><img src="img/home_cat_1.png"></a>
-					<h3><a href="?q=paises">Paises</a></h3>
-					<p>Consulta los paises que han recibido ayudas y como han evolucionado</p>
-				</div>
-
-				<div class="section">
-					<a href="?q=temas"><img src="img/home_cat_2.png"></a>
-					<h3><a href="?q=temas">Temas</a></h3>
-					<p>Navega por los todos los temas para los que España ha otorgado ayudas</p>
-				</div>
-
-				<div class="section">
-					<a href="?q=organismos"><img src="img/home_cat_3.png"></a>
-					<h3><a href="?q=organismos">Organismos</a></h3>
-					<p>Revisa los organismos emisores de las ayudas</p>
-				</div>
-
-			</div>
+			<!-- Comienza formulario Acumbamail -->
+			<form action="http://acumbamail.com/signup/14274/" method="post" class="yourFormContainer"
+			style="padding: 2em; background: #FFFFCC; text-align: center; margin: 1em 0 ">
+			   <div class="yourFormStyle">
+			      <div style="width: 100%; position:relative;"> 
+			      	<label for="email_1">Tu correo-e </label>
+			      	<input type="text" name="email_1" style="padding: .25em; width: 300px; font-size: 1.2em; margin: 0 .5em">
+			      	<!-- <input type="submit" value="Suscribirme" style="padding: .25em; font-size: 1.4em; margin: 0 1em" class="yourButtonStyle"> -->
+			      	<button type="submit" id="newsletter_subscribe" style="padding: .25em; font-size: 1.2em; margin: 0 .5em">Suscribirme</button><br>
+			      	<div style="margin: 2em 0 0 0; font-size: .7em">No usaremos tu correo para nada más, odiamos el spam más que tu</div>
+			      </div>
+			   </div>
+			   <input type="hidden" name="ok_redirect" value="http://ayudaaldesarrollo.es/?q=home&subs=true">
+			   
+			</form>
+			<!-- Fin formulario Acumbamail -->
 
 		</section>
-
 
 		<section>
 
 			<header>
+				<div class="media_logos">
+					<a href="http://www.elconfidencial.com/"><img src="img/badge_elconfidencial.png" width="217" height="22"></a>
+					<a href="http://www.lasexta.com/programas/el-objetivo/"><img src="img/badge_elobjetivo.png" width="125" height="22"></a>
+				</div>
 				<h2>Historias sobre el impacto de la ayuda</h2>
 				<p>Hemos viajado sobre el terreno para comprobar el impacto de la ayuda</p>
 			</header>
@@ -108,50 +125,109 @@
 			<div class="features">
 
 				<div class="feature">
-					<a href=""><img src="img/home_features_1_small.jpg" width="198" heigh="188" alt=""></a>
+					<a href="http://www.elconfidencial.com/espana/2013-12-10/la-cooperacion-en-vietnam-se-marcha-sin-dejar-huella-para-la-marca-espana_64347/"><img src="img/aod_8.jpg" width="198" heigh="188" alt=""></a>
 					<span></span>
-					<h3><a href="">Vidas que hacen aguas</a></h3>
+					<h3><a href="http://www.elconfidencial.com/espana/2013-12-10/la-cooperacion-en-vietnam-se-marcha-sin-dejar-huella-para-la-marca-espana_64347/">La cooperación en Vietnam se marcha sin dejar huella para la Marca España</a></h3>
 				</div>
 
 				<div class="feature">
-					<a href=""><img src="img/home_features_2_small.jpg" width="198" heigh="188" alt=""></a>
+					<a href="http://www.elconfidencial.com/multimedia/album/espana/2013-12-10/cooperacion-espanola-en-vietnam-un-pais-de-experiencias-piloto-sin-continuidad_64371/#8"><img src="img/aod_9.jpg" width="198" heigh="188" alt=""></a>
 					<span></span>
-					<h3><a href="">Mejorando la forma de cosechar... después de 1000 años</a></h3>
+					<h3><a href="http://www.elconfidencial.com/multimedia/album/espana/2013-12-10/cooperacion-espanola-en-vietnam-un-pais-de-experiencias-piloto-sin-continuidad_64371/">Cooperación española en Vietnam: experiencias piloto sin continuidad (fotos)</a></h3>
 				</div>
 
 				<div class="feature">
-					<a href=""><img src="img/home_features_3_small.jpg" width="198" heigh="188" alt=""></a>
+					<a href="http://www.elconfidencial.com/espana/2013-12-13/bolivia-gestiona-por-su-cuenta-hasta-un-tercio-de-la-ayuda-que-recibe-de-espana_65709/"><img src="img/aod_10.jpg" width="198" heigh="188" alt=""></a>
 					<span></span>
-					<h3><a href="">Los mercados en Vietnam</a></h3>
+					<h3><a href="http://www.elconfidencial.com/espana/2013-12-13/bolivia-gestiona-por-su-cuenta-hasta-un-tercio-de-la-ayuda-que-recibe-de-espana_65709/">Bolivia gestiona por su cuenta hasta un tercio de la ayuda que recibe de España</a></h3>
 				</div>
 
 				<div class="feature">
-					<a href=""><img src="img/home_features_4_small.jpg" width="198" heigh="188" alt=""></a>
+					<a href="http://www.elconfidencial.com/multimedia/album/espana/2013-12-13/la-cooperacion-en-bolivia-frustrada-por-la-crisis_65985/#9"><img src="img/aod_11.jpg" width="198" heigh="188" alt=""></a>
 					<span></span>
-					<h3><a href="">Garantizando el futuro del pasado</a></h3>
+					<h3><a href="http://www.elconfidencial.com/multimedia/album/espana/2013-12-13/la-cooperacion-en-bolivia-frustrada-por-la-crisis_65985/">La cooperación en Bolivia, frustrada por la crisis (fotos)</a></h3>
+				</div>
+
+
+
+				<div class="feature">
+					<a href="http://www.elconfidencial.com/espana/2013-12-05/guatemala-sufre-el-fin-de-la-ayuda-espanola-tras-anos-de-generosidad-mal-planificada_62604/"><img src="img/aod_6.jpg" width="198" heigh="188" alt=""></a>
+					<span></span>
+					<h3><a href="http://www.elconfidencial.com/espana/2013-12-05/guatemala-sufre-el-fin-de-la-ayuda-espanola-tras-anos-de-generosidad-mal-planificada_62604/">Guatemala sufre el fin de la ayuda española tras años de generosidad mal planificada</a></h3>
 				</div>
 
 				<div class="feature">
-					<a href=""><img src="img/home_features_5_small.jpg" width="198" heigh="188" alt=""></a>
+					<a href="http://www.elconfidencial.com/multimedia/album/espana/2013-12-05/guatemala-y-la-cooperacion-excesiva_62470/#1"><img src="img/aod_7.jpg" width="198" heigh="188" alt=""></a>
 					<span></span>
-					<h3><a href="">Todo el mundo al colegio</a></h3>
+					<h3><a href="http://www.elconfidencial.com/multimedia/album/espana/2013-12-05/guatemala-y-la-cooperacion-excesiva_62470/#1">Guatemala y la cooperación excesiva (fotos)</a></h3>
 				</div>
 
 				<div class="feature">
-					<a href=""><img src="img/home_features_4_small.jpg" width="198" heigh="188" alt=""></a>
+					<a href="http://blogs.elconfidencial.com/espana/tribuna/2013-12-05/sin-cooperacion-un-pais-a-la-deriva_62483/"><img src="img/aod_5.jpg" width="198" heigh="188" alt=""></a>
 					<span></span>
-					<h3><a href="">Garantizando el futuro del pasado</a></h3>
+					<h3><a href="http://blogs.elconfidencial.com/espana/tribuna/2013-12-05/sin-cooperacion-un-pais-a-la-deriva_62483/">Sin cooperación, un país a la deriva (opinión)</a></h3>
+				</div>
+
+
+
+				<div class="feature">
+					<a href="http://www.elconfidencial.com/espana/2013-12-01/hacienda-toma-el-control-de-la-cooperacion-internacional-y-recorta-mas-que-en-grecia_60964/"><img src="img/aod_1.jpg" width="198" heigh="188" alt=""></a>
+					<span></span>
+					<h3><a href="http://www.elconfidencial.com/espana/2013-12-01/hacienda-toma-el-control-de-la-cooperacion-internacional-y-recorta-mas-que-en-grecia_60964/">Hacienda toma el control de la cooperación internacional y recorta más que en Grecia</a></h3>
 				</div>
 
 				<div class="feature">
-					<a href=""><img src="img/home_features_3_small.jpg" width="198" heigh="188" alt=""></a>
+					<a href="http://www.elconfidencial.com/espana/2013-12-01/cuanto-donde-y-como-radiografia-a-la-cooperacion-espanola-al-desarrollo_60965/"><img src="img/aod_2.jpg" width="198" heigh="188" alt=""></a>
 					<span></span>
-					<h3><a href="">Vidas que hacen aguas</a></h3>
+					<h3><a href="http://www.elconfidencial.com/espana/2013-12-01/cuanto-donde-y-como-radiografia-a-la-cooperacion-espanola-al-desarrollo_60965/">Cuánto, dónde y cómo… Radiografía a la Cooperación Española al Desarrollo</a></h3>
 				</div>
+
+				<div class="feature">
+					<a href="http://www.elconfidencial.com/espana/2013-12-02/espana-abandona-congo-por-los-recortes-pese-a-la-urgencia-humanitaria_61187/"><img src="img/aod_3.jpg" width="198" heigh="188" alt=""></a>
+					<span></span>
+					<h3><a href="http://www.elconfidencial.com/espana/2013-12-02/espana-abandona-congo-por-los-recortes-pese-a-la-urgencia-humanitaria_61187/">España abandona Congo por los recortes pese a la urgencia humanitaria</a></h3>
+				</div>
+
+				<div class="feature">
+					<a href="http://www.elconfidencial.com/multimedia/album/mundo/2013-12-02/rd-congo-un-pais-en-emergencia-sin-ayuda-espanola_61133/"><img src="img/aod_4.jpg" width="198" heigh="188" alt=""></a>
+					<span></span>
+					<h3><a href="http://www.elconfidencial.com/multimedia/album/mundo/2013-12-02/rd-congo-un-pais-en-emergencia-sin-ayuda-espanola_61133/">RD Congo, un país en emergencia sin ayuda española (fotos)</a></h3>
+				</div>
+
+				
 
 			</div>
 			
 
 		</section>
+
+		<section>
+
+			<header>
+				<h2>Nuestra aparición en El Objetivo</h2>
+				<p></p>
+			</header>
+
+			<div class="video">
+
+				<div style="width: 600px; height: 391px; margin:10px auto;">
+					<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,0,0" width="600" height="391" align="middle"><param name="allowScriptAccess" value="always"/>
+					<param name="movie" value="http://www.lasexta.com/static/swf/laSextaVideo.swf"/>
+					<param name="quality" value="high"/>
+					<param name="scale" value="noscale"/>
+					<param name="bgcolor" value="#ffffff"/>
+					<param name="allowFullScreen" value="true"/>
+					<param name="FlashVars" value="xml=http://www.antena3.com/videoxml/60000001/70002202/70002206/2013/12/01/00099.xml"/>
+					<embed src="http://www.lasexta.com/static/swf/laSextaVideo.swf" width="600" height="391" quality="high" allowScriptAccess="always" allowFullScreen="true" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" FlashVars="xml=http://www.antena3.com/videoxml/60000001/70002202/70002206/2013/12/01/00099.xml"/></object>
+				</div>
+
+			</div>
+
+
+		</section>
+
+
+
+
 
 	</section>

@@ -17,16 +17,57 @@
     <meta name="og:image" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>El Impacto de la Ayuda Oficinal al Desarrollo (España) - 2007-2012</title>
+
     <link rel="stylesheet" href="style/style.css" type="text/css" media="screen,print" />
-    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
-    <link rel="stylesheet" href="style/dataTable.css" type="text/css" media="screen,print" />
-    <link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/themes/css/cartodb.css" />
-    <!--[if lte IE 8]>
-      <link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/themes/css/cartodb.ie.css" />
-    <![endif]-->
-    <script src="http://libs.cartocdn.com/cartodb.js/v3/cartodb.js"></script>
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+
+	<!-- Data Tables -->
+	<link rel="stylesheet" href="style/dataTable.css" type="text/css" media="screen,print" />
+	<script src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
+
+	<!-- morris.js, para el gráfico de la home - y los demás? -->
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+	<script src="http://cdn.oesmith.co.uk/morris-0.4.1.min.js"></script>
+
+
+	
+	<!-- Google Tag Manager -->
+	<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-T92TFV"
+	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-T92TFV');</script>
+	<!-- End Google Tag Manager -->
+
+	<!-- check http://help.typekit.com/customer/portal/articles/6852 if strange things happen at load -AO -->
+	<script type="text/javascript">
+	  (function() {
+	    var config = {
+	      kitId: 'tux7zlf',
+	      scriptTimeout: 3000
+	    };
+	    var h=document.getElementsByTagName("html")[0];h.className+=" wf-loading";var t=setTimeout(function(){h.className=h.className.replace(/(\s|^)wf-loading(\s|$)/g," ");h.className+=" wf-inactive"},config.scriptTimeout);var tk=document.createElement("script"),d=false;tk.src='//use.typekit.net/'+config.kitId+'.js';tk.type="text/javascript";tk.async="true";tk.onload=tk.onreadystatechange=function(){var a=this.readyState;if(d||a&&a!="complete"&&a!="loaded")return;d=true;clearTimeout(t);try{Typekit.load(config)}catch(b){}};var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(tk,s)
+	  })();
+	</script>
+    
+
 </head>
 <body>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/es_ES/all.js#xfbml=1&appId=154735137950868";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
 
 <div id="container">
 
@@ -50,13 +91,16 @@
 	<?php
 
 	$pagina = $_GET['q'];
-
+	
 	if($pagina) {
-		include($pagina.".html");
+		if(file_exists($pagina.".html")) {
+			include('./'.$pagina.".html");
+		}
 	}
 	else {
-		echo "no encuentro el partial";
-	}
+		include('./home.html');	
+	}	
+
 
 	?>
 
@@ -65,6 +109,19 @@
 		
 		<a href="?q=acerca_de">Acerca de</a> ·
 		<a href="?q=acerca_de#contacto">Contacto</a>
+
+		<div class="social_links">
+			
+			<a href="https://twitter.com/share" class="twitter-share-button" data-lang="es" data-hashtags="ayudaaldesarrollo">Twittear</a>
+			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+			<br><br>
+			
+			<div class="fb-like" data-href="http://ayudaaldesarrollo.es" data-layout="standard" data-action="like" data-show-faces="true" data-share="false"></div>
+
+		</div>
+
+
 
 		<ul class="primary_links">
 			<li class="sec_paises"><a href="?q=paises">Paises</a></li>
@@ -87,40 +144,32 @@
 </div>
 
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
 
-<!-- dataTables.js -->
-<script src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
 
-<!-- morris.js -->
-<script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
-<script src="http://cdn.oesmith.co.uk/morris-0.4.1.min.js"></script>
-
-<!-- Google Tag Manager -->
-<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-T92TFV"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-T92TFV');</script>
-<!-- End Google Tag Manager -->
-
-<!-- check http://help.typekit.com/customer/portal/articles/6852 if strange things happen at load -AO -->
-<script type="text/javascript">
-  (function() {
-    var config = {
-      kitId: 'tux7zlf',
-      scriptTimeout: 3000
-    };
-    var h=document.getElementsByTagName("html")[0];h.className+=" wf-loading";var t=setTimeout(function(){h.className=h.className.replace(/(\s|^)wf-loading(\s|$)/g," ");h.className+=" wf-inactive"},config.scriptTimeout);var tk=document.createElement("script"),d=false;tk.src='//use.typekit.net/'+config.kitId+'.js';tk.type="text/javascript";tk.async="true";tk.onload=tk.onreadystatechange=function(){var a=this.readyState;if(d||a&&a!="complete"&&a!="loaded")return;d=true;clearTimeout(t);try{Typekit.load(config)}catch(b){}};var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(tk,s)
-  })();
-</script>
 
 <script type="text/javascript">
 
 $(document).ready(function() {
+	
+	$('#tab_regions').click(
+		function() {
+	  		$('#map_countries').hide();
+	  		$('#map_regions').show();
+	  		$('#tab_countries').removeClass('active');
+	  		$('#tab_regions').addClass('active');
+	  		return false;
+		}
+	);
+	$('#tab_countries').click(
+		function() {
+	  		$('#map_countries').show();
+	  		$('#map_regions').hide();
+	  		$('#tab_countries').addClass('active');
+	  		$('#tab_regions').removeClass('active');
+	  		return false;
+		}
+	);
+
 	
 	$('.drop_year_selector').click(
 		function() {
@@ -134,7 +183,7 @@ $(document).ready(function() {
 	$('#dataTable').dataTable();
 
 	$(function() {
-    	$( document ).tooltip({
+    	$('.tooltip').tooltip({
 	      show: null,
 	      position: {
 	        my: "left top",
@@ -170,10 +219,14 @@ $(document).ready(function() {
 		// and run it again every time you scroll
 		$(window).scroll(function() {
 			stickyNav();
-		});	
-	}	
+		});
+		
+	}
+	
 });
+
 </script>
+
 </body>
 </html>
 

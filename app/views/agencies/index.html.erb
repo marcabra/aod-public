@@ -19,7 +19,7 @@
 			  <% @departments.each do |agency| %>
 		      <li><%= link_to agency.name, agency %></li>
 			  <% end %>
-				<li><a href="?q=paises_pais_dimension">Ver todos</a></li>
+				<li><%= link_to 'ver todos', projects_path %></li>
 			</ul>
 		</div>
 
@@ -29,7 +29,7 @@
 			  <% @regions.each do |agency| %>
 			    <li><%= link_to agency.name, agency %></li>
 			  <% end %>
-				<li><a href="?q=paises_pais_dimension">Ver todos</a></li>
+				<li><%= link_to 'ver todos', projects_path %></li>
 			</ul>
 		</div>
 
@@ -39,7 +39,7 @@
 			  <% @town_halls.each do |agency| %>
 		      <li><%= link_to agency.name, agency %></li>
 			  <% end %>
-				<li><a href="?q=paises_pais_dimension">Ver todos</a></li>
+				<li><%= link_to 'ver todos', projects_path %></li>
 			</ul>
 		</div>
 
@@ -49,7 +49,7 @@
 			  <% @universities.each do |agency| %>
 		      <li><%= link_to agency.name, agency %></li>
 			  <% end %>
-				<li><a href="?q=paises_pais_dimension">Ver todos</a></li>
+				<li><%= link_to 'ver todos', projects_path %></li>
 			</ul>
 		</div>
 	</section>

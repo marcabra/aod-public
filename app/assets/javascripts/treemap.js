@@ -35,7 +35,8 @@ d3.json(url, function(data) {
     .enter().append("svg:g")
       .attr("class", "cell")
       .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; })
-      .on("click", function(d) { return zoom(node == d.parent ? root : d.parent); });
+      .on("click", clickCell);
+      //.on("click", function(d) { return zoom(node == d.parent ? root : d.parent); });
 
   cell.append("svg:rect")
       .attr("width", function(d) { return d.dx - 1; })
@@ -47,23 +48,20 @@ d3.json(url, function(data) {
       .attr("y", function(d) { return d.dy / 2; })
       .attr("dy", ".35em")
       .attr("text-anchor", "middle")
-      .text(function(d) { return d.name; })
+      .text(function(d) { return d.name + " (" + accounting.formatMoney(d.size, { symbol: "€",  format: "%v %s" }, 2, ".", ",") + ")"; })
       .style("opacity", function(d) { d.w = this.getComputedTextLength(); return d.dx > d.w ? 1 : 0; });
+      
+  //d3.select(window).on("click", function() { zoom(root); });
 
-  d3.select(window).on("click", function() { zoom(root); });
-
-  d3.select("select").on("change", function() {
-    treemap.value(this.value == "size" ? size : count).nodes(root);
-    zoom(node);
-  });
 });
 
-function size(d) {
-  return d.size;
-}
-
-function count(d) {
-  return 1;
+function clickCell(d) {
+  if(node == d.parent) {
+    window.location = d.url
+  }
+  else {
+    return zoom(d.parent);
+  }
 }
 
 function zoom(d) {

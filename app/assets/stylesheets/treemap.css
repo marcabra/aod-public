@@ -1,55 +1,60 @@
-#topics_treemap {
-	width: 1000px;
-  height: 700px;
-	background: #bbb;
-	margin: 1px auto;
-	position: relative;
-	-webkit-box-sizing: border-box;
-		-moz-box-sizing: border-box;
-			box-sizing: border-box;
+.treemap {
+  display: block;
+  margin: auto;
 }
 
-text {
-	pointer-events: none;
+.treemap text {
+  font-size: 11px;
 }
 
-.grandparent text { /* header text */
-	font-weight: bold;
-	font-size: medium;
-	font-family: "Open Sans", Helvetica, Arial, sans-serif;
+.treemap rect {
+  fill: none;
+  pointer-events: all;
 }
 
-rect {
-	fill: none;
-	stroke: #fff;
+pre {
+  font-size: 18px;
 }
 
-rect.parent,
-.grandparent rect {
-	stroke-width: 2px;
+line {
+  stroke: #000;
+  stroke-width: 1.5px;
 }
 
-.grandparent rect {
-	fill: #fff;
+.string, .regexp {
+  color: #f39;
 }
 
-.children rect.parent,
-.grandparent rect {
-	cursor: pointer;
+.keyword {
+  color: #00c;
 }
 
-rect.parent {
-	pointer-events: all; 
+.comment {
+  color: #777;
+  font-style: oblique;
 }
 
-.children:hover rect.child,
-.grandparent:hover rect {
-	fill: #aaa;
+.number {
+  color: #369;
 }
 
-.textdiv { /* text in the boxes */
-	font-size: x-small;
-	padding: 5px;
-	font-family: "Open Sans", Helvetica, Arial, sans-serif;
-	color: #000;
+.class, .special {
+  color: #1181B8;
+}
+
+.treemap a:link, .treemap a:visited {
+  color: #000;
+  text-decoration: none;
+}
+
+.treemap a:hover {
+  color: #666;
+}
+
+.treemap .hint {
+  position: absolute;
+  right: 0;
+  width: 1280px;
+  font-size: 10px;
+  color: #999;
 }

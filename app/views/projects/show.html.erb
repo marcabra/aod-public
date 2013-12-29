@@ -29,7 +29,7 @@
 		<% unless @project.returned_amount > 0 %>
 		<tr>
 			<th>Importe desembolsado</th>
-			<td><%= number_to_currency @project.paid_amount %></td>
+			<td><%= number_to_currency @project.paid_amount %> <%= "*" if @project.paid_amount == 0 %></td>
 		</tr>
 		<% else %>
 		<tr>
@@ -68,4 +68,9 @@
 		  <% end %>
 		</ul>
 	</section>
+	
+	<% if @project.paid_amount == 0 %>
+	<p style="margin-top:50px">(*) <%= link_to 'Entiende porqué la cifra es cero.', page_path('about') %></p>
+  <% end %>
+	
 </section>

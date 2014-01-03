@@ -61,7 +61,7 @@
 	</section>
 
 	<section class="browse_other_proyects">
-		<p>Otros proyectos en <%= @project.region.name %></p>
+		<p>Principales proyectos en <%= @project.region.name %> en <%= current_year %></p>
 		<ul>
 		  <% @related_projects.each do |project| %>
 		    <li><%= link_to project.title, project %></li>

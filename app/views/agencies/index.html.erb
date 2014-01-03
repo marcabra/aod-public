@@ -8,7 +8,7 @@
 			Año: 
 			<ul>
 			  <% (2007..2012).each do |year| %>
-				  <li><%= link_to year, agencies_path(year: year), class: current_year==year ? 'active' : nil %></li>
+				  <li class="<%= (current_year.to_i==year) ? 'active' : ' ' %>"><%= link_to year, agencies_path(year: year) %></li>
 				<% end %>
 			</ul>
 		</div>

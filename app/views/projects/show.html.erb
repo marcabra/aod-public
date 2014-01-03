@@ -23,7 +23,7 @@
 			<td><%= @project.location %></td>
 		</tr>
 		<tr>
-			<th>Importe comprometidos</th>
+			<th>Importe comprometido</th>
 			<td><%= number_to_currency @project.committed_amount %></td>
 		</tr>
 		<% unless @project.returned_amount > 0 %>
@@ -46,7 +46,7 @@
 			<td><%= @project.duration %></td>
 		</tr>
 		<tr>
-			<th>Organismos</th>
+			<th>Organismo</th>
 			<td><%= agencies_link @project %></td>
 		</tr>
 		<tr>

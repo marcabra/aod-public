@@ -23,17 +23,17 @@
 			<td><%= @project.location %></td>
 		</tr>
 		<tr>
-			<th>Importe comprometido</th>
+			<th>Importe comprometido en <%= current_year %></th>
 			<td><%= number_to_currency @project.committed_amount %></td>
 		</tr>
 		<% unless @project.returned_amount > 0 %>
 		<tr>
-			<th>Importe desembolsado</th>
+			<th>Importe desembolsado en <%= current_year %></th>
 			<td><%= number_to_currency @project.paid_amount %> <%= "*" if @project.paid_amount == 0 %></td>
 		</tr>
 		<% else %>
 		<tr>
-			<th>Créditos reembolsados</th>
+			<th>Créditos reembolsados en <%= current_year %></th>
 			<td><%= number_to_currency @project.returned_amount %></td>
 		</tr>
 		<% end %>

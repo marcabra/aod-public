@@ -15,6 +15,10 @@
 			<td><%= @project.started_at %>-<%= @project.ended_at %></td>
 		</tr>
 		<tr>
+			<th>Duración</th>
+			<td><%= @project.duration %></td>
+		</tr>
+		<tr>
 			<th>País/Región</th>
 			<td><%= link_to @project.region.name, @project.region %></td>
 		</tr>
@@ -40,10 +44,6 @@
 		<tr>
 			<th>Ayuda</th>
 			<td><%= @project.aid_via %></td>
-		</tr>
-		<tr>
-			<th>Duración</th>
-			<td><%= @project.duration %></td>
 		</tr>
 		<tr>
 			<th>Organismo</th>

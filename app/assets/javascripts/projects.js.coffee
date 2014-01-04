@@ -5,5 +5,6 @@ $ ->
 	    bJQueryUI: true
 	    bProcessing: true
 	    bServerSide: true
+	    oSearch: { sSearch: gon.defaultSearch }
 	    sAjaxSource: $('#projects').data('source')
     

@@ -26,4 +26,19 @@ namespace :export do
       end
     end
   end
+  
+  desc 'Export regions'
+  task :regions => :environment do 
+    CSV.open("regions.csv", "wb", col_sep: ';') do |csv|
+      csv << ["region_id", "name", "iso_code"]
+      data = Region.find_by_sql(%Q(select regions.id, regions.name, geodata.iso_code
+                  from regions
+                  left join geodata on upper(regions.name) = upper(geodata.name)
+                  order by regions.name))
+      data.each do |d|
+        csv << [d.id, d.name, d.iso_code]
+      end
+    end
+  end
+  
 end

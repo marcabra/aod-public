@@ -43,8 +43,10 @@ namespace :import do
             internal_code: row['internal_code'], 
             region: region,
             topic: topic)
-            
-        project.aids.build(agency: agency, year: row['year'], committed_amount: row['committed_amount'], paid_amount: [row['paid_amount'].to_f, 0].max, returned_amount: [row['paid_amount'].to_f, 0].min.abs)
+          
+          committed_amount =  row['committed_amount'].gsub('.', '').gsub(',','.').to_f
+          paid_amount =  row['paid_amount'].gsub('.', '').gsub(',','.').to_f
+          project.aids.build(agency: agency, year: row['year'], committed_amount: committed_amount, paid_amount: [paid_amount, 0].max, returned_amount: [paid_amount, 0].min.abs)
         begin
           project.save
         rescue Exception => e

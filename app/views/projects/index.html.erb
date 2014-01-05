@@ -1,4 +1,8 @@
 <section id="projects">
+  <header>
+		<h1>Proyectos a los que se dedica la Ayuda Oficial al Desarrollo en <%= current_year %></h1>
+	</header>
+	
   <section class="table_browse">
     <table cellpadding="0" cellspacing="0" border="0" class="display" id="dataTable" data-source="<%= projects_url(params: { sSearch: params[:sSearch] }, format: "json") %>">
       <thead>

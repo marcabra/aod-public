@@ -9,23 +9,39 @@ load_map = (year) ->
     else 'http://aod.cartodb.com/api/v2/viz/0797a842-7625-11e3-8fc5-b90814c2a349/viz.json'
   cartodb.createVis('countries_map', url)
 
-if $('#region_chart').length
-  new Morris.Line
-    element: 'region_chart'
-    data: gon.aids
-    xkey: 'year'
-    ykeys: ['amount']
-    labels: ['Importe']
-    postUnits: ' €'
+$ ->
+  if $('#region_chart').length
+    new Morris.Line
+      element: 'region_chart'
+      data: gon.aids
+      xkey: 'year'
+      ykeys: ['amount']
+      labels: ['Importe']
+      postUnits: ' €'
 
-$("ul.tabs li").bind 'click', () -> 
-  current_tab = $('ul li.active')
-  current_tab.removeClass('active')
-  $(current_tab.data('href')).hide
-  $(this).addClass('active')
-  $($(this).data('href')).show
+  $("ul.tabs li").on 'click', () -> 
+    current_tab = $('ul li.active')
+    current_tab.removeClass('active')
+    $(current_tab.data('href')).hide
+    $(this).addClass('active')
+    $($(this).data('href')).show
 
-$(".year_selector").bind 'click', () -> load_map($(this).data('year'))
-load_map(gon.current_year) if $('#countries_map').length
+  $(".year_selector").on 'click', () -> load_map($(this).data('year'))
+  load_map(gon.current_year) if $('#countries_map').length
   
-$(".collapsable").bind 'click', () -> $(this).animate {height: '500'}, 300 
+  $(".collapsable").on 'click', () -> $(this).animate {height: '500'}, 300 
+
+  $('.tabs').on 'click', '#regions_tab', () ->
+    $('#map_countries').hide()
+    $('#map_regions').show()
+    $('#countries_tab').removeClass('active')
+    $('#regions_tab').addClass('active')
+    false
+  
+  $('.tabs').on 'click', '#countries_tab', () ->
+    $('#map_countries').show()
+    $('#map_regions').hide()
+    $('#countries_tab').addClass('active')
+    $('#regions_tab').removeClass('active')
+    return false
+

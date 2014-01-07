@@ -36,5 +36,9 @@ class Agency < ActiveRecord::Base
       group by agencies.id
       order by paid_amount desc 
       limit 5), topic, year])
-  end  
+  end 
+  
+  def self.count(year)
+    @count ||= Agency.joins(:aids).where("year = ?", year).select("distinct agencies.id").count
+  end
 end

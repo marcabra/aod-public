@@ -48,4 +48,8 @@ class Region < ActiveRecord::Base
       order by paid_amount desc
       limit 5), topic, year])
   end
+  
+  def self.count(year)
+    @count ||= Region.joins(:aids).where("year = ?", year).select("distinct regions.id").count
+  end
 end

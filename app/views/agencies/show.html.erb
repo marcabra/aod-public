@@ -25,7 +25,7 @@
 		</tr>
 		<tr>
 			<th>Ranking organismos</th>
-			<td>#<%= @agency.rank(current_year) %></td>
+			<td><%= @agency.rank(current_year) %> de <%= Agency.count(current_year) %></td>
 		</tr>
 		</table>
 	</section>

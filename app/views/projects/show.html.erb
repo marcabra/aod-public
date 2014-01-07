@@ -67,6 +67,7 @@
 		    <li><%= link_to project.title, project %></li>
 		  <% end %>
 		</ul>
+		<p><%= link_to "Ver todos los proyectos en #{@project.region.name}", projects_path(sSearch: @project.region.name) %></p>
 		<% if @project.duration.match('\^') %>
 		  <small>^: Esta es la duración marcada en el archivo original. El Ministerio no supo aclarar si corresponde a meses o años.</small>
 		<% end %>

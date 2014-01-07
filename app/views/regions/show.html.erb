@@ -44,7 +44,7 @@
 		</tr>
 		<tr>
 			<th>Ranking países receptores</th>
-			<td>#<%= @region.rank(current_year) %> de <%= Region.count(current_year) %></td>
+			<td><%= @region.rank(current_year) %> de <%= Region.count(current_year) %></td>
 		</tr>
 		<tr class="sep">
 			<th>Total 2007-2012</th>

@@ -67,7 +67,7 @@
 		    <li><%= link_to project.title, project %></li>
 		  <% end %>
 		</ul>
-		<% if @project.duration.match('^') %>
+		<% if @project.duration.match('\^') %>
 		  <small>^: Esta es la duración marcada en el archivo original. El Ministerio no supo aclarar si corresponde a meses o años.</small>
 		<% end %>
 	</section>

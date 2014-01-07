@@ -3,11 +3,11 @@ class ProjectsController < ApplicationController
   respond_to :json, only: [:index]
 
   def index
-    @projects = Project.joins(:region, :aids, :agencies, :topic).order("#{sort_column} #{sort_direction}").where("aids.year = :year", year: current_year)
-    @projects = @projects.page(page).per_page(per_page)
+    @projects = Project.joins(:region, :aids, :agencies, :topic).where("aids.year = :year", year: current_year).order("#{sort_column} #{sort_direction}")
     if params[:sSearch].present?
       @projects = @projects.where("projects.title ilike :search or regions.name ilike :search or topics.name ilike :search or agencies.name ilike :search", search: "%#{params[:sSearch]}%")
     end
+    @projects = @projects.page(page).per_page(per_page)
     
     gon.defaultSearch = params[:sSearch] || ''
 

@@ -10,13 +10,9 @@ $cs-text-soft: #A2A2A2;
 $cs-text: #8C8C8C; 
 $cs-link: #006699;
 
-
 $ff-default: "museo-sans";
 $ff-titles: "museo-sans";
 $ff-subtitles: "museo-sans";
-
-
-
 
 .clearfix {
     zoom:1;
@@ -63,7 +59,6 @@ h1, h2, h3, h4, h5 {
 }
 
 .primary_links {
-
 	position: absolute; 
 	bottom: 9px; 
 	right: 0;
@@ -77,7 +72,6 @@ h1, h2, h3, h4, h5 {
 		margin: 0  0 0 .25em;
 		text-align: center; 
 		line-height: 1em;
-		font-family: $ff-subtitles;
 	}
 	a { 
 		display: inline-block; 

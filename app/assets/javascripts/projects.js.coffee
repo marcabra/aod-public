@@ -1,5 +1,5 @@
 $ ->
-  if $('#dataTable').length > 0
+  if $('#dataTable').length
 	  $('#dataTable').dataTable
 	    sPaginationType: "full_numbers"
 	    bJQueryUI: true

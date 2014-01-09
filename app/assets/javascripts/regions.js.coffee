@@ -1,11 +1,11 @@
 load_map = (year) ->
   url = switch year
-    when '2012' then 'http://aod.cartodb.com/api/v2/viz/0797a842-7625-11e3-8fc5-b90814c2a349/viz.json'
-    when '2011' then 'http://aod.cartodb.com/api/v2/viz/f825d082-7624-11e3-9108-a7f4821d3a89/viz.json'
-    when '2010' then 'http://aod.cartodb.com/api/v2/viz/e5bfee96-7624-11e3-8655-bd7130932d76/viz.json'
-    when '2009' then 'http://aod.cartodb.com/api/v2/viz/ce3e70d0-7624-11e3-b2b1-b396f9393345/viz.json'
-    when '2008' then 'http://aod.cartodb.com/api/v2/viz/b3d6e5e2-7624-11e3-aeee-b78383615a4f/viz.json'
-    when '2007' then 'http://aod.cartodb.com/api/v2/viz/9983d15a-7624-11e3-847d-bba7f41e5de5/viz.json'
+    when '2012' then 'http://aod.cartodb.com/api/v2/viz/be082d36-7986-11e3-b86c-6f645b9874e3/viz.json'
+    when '2011' then 'http://aod.cartodb.com/api/v2/viz/ab1fbc66-7986-11e3-8603-1124ab83c2c9/viz.json'
+    when '2010' then 'http://aod.cartodb.com/api/v2/viz/84ddb008-7986-11e3-9507-339af5eb7dd6/viz.json'
+    when '2009' then 'http://aod.cartodb.com/api/v2/viz/e70bf06a-7985-11e3-a890-3d723c064bcc/viz.json'
+    when '2008' then 'http://aod.cartodb.com/api/v2/viz/ad3e342e-7985-11e3-a7b8-5f0b80366dd9/viz.json'
+    when '2007' then 'http://aod.cartodb.com/api/v2/viz/3f74776a-7984-11e3-a799-39bf78eac923/viz.json'
     else 'http://aod.cartodb.com/api/v2/viz/0797a842-7625-11e3-8fc5-b90814c2a349/viz.json'
   cartodb.createVis('countries_map', url)
 

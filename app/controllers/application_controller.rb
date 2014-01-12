@@ -5,7 +5,8 @@ class ApplicationController < ActionController::Base
   helper_method :current_year
   
   def current_year
-    @current_year = params[:year] || 2012
+    @current_year = params[:year] || session[:year] || 2012
+    session[:year] = @current_year
   end
   
   private

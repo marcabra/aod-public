@@ -666,3 +666,19 @@ body .ui-tooltip {
 .social_links {
 	margin: 2em 0;
 }
+
+
+.barchart_element h2 { width: 380px; float: left; margin: 4px 30px 0 0; padding: 0; font-size: 1.2em; font-weight: bold; text-align: right; }
+.barchart_element h2 a { color: #D1632A;}
+.total { width: 520px; float: left; height: 36px; background: #F6E0D4; position: relative; margin: 0 0 20px 0; color: #D1632A;}
+.part { background: #D1632A; height: 100%; display: inline-block; }
+.part_label { display: inline-block; vertical-align: top; padding: 9px; }
+.total_money_label { position: absolute; right: 9px; top: 9px; text-align: right; }
+#themes header { position: relative; margin: 0 0 2em 0;}
+#themes header .data_filter { position: absolute; top: -3px; right: 0; margin: 0;}
+/*.total, .part, .part_label { border: 1px solid red; }*/
+#themes .breadcrumb { font-size: 1.2em; margin: 0 0 1em 0; }
+.sub_theme { font-size: .85em; }
+.sub_theme .total { height: 32px; margin-bottom: 10px;  }
+
+

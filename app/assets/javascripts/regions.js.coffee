@@ -7,7 +7,7 @@ load_map = (year) ->
     when '2008' then 'http://aod.cartodb.com/api/v2/viz/ad3e342e-7985-11e3-a7b8-5f0b80366dd9/viz.json'
     when '2007' then 'http://aod.cartodb.com/api/v2/viz/3f74776a-7984-11e3-a799-39bf78eac923/viz.json'
     else 'http://aod.cartodb.com/api/v2/viz/0797a842-7625-11e3-8fc5-b90814c2a349/viz.json'
-  cartodb.createVis('countries_map', url, { zoom: 2 })
+  cartodb.createVis('countries_map', url, { center: [28.13966,0], zoom: 2 })
 
 $ ->
   if $('#region_chart').length

@@ -6,7 +6,11 @@ class Topic < ActiveRecord::Base
   scope :by_year, lambda { |year| joins(:aids).where("aids.year = ?", year) }
   
   def amount(year)
-    @amount ||= aids.by_year(year).sum(:paid_amount)
+    if self.has_children?
+      @amount ||= children.sum { |c| c.amount(year) }
+    else
+      @amount ||= aids.by_year(year).sum(:paid_amount)
+    end
   end
     
   def rank(year)

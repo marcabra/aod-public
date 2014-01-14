@@ -1,11 +1,6 @@
 <section id="themes">
-	<header>
+	<header class="clearfix">
 		<h1>Temas a los que se dedica la Ayuda Oficial al Desarrollo</h1>
-	</header>
-
-	<section id="themes_treemap">
-		<div id="treemap"></div>
-
 		<div class="data_filter map_aid_dates">
 			Año: 
 			<ul>
@@ -15,6 +10,16 @@
 			</ul>			
 			<div class="nav_end"></div>
 		</div>
-	</section>
-</section>
+	</header>
 
+  <% @topics.each do |topic| %>
+	<div class="barchart_element clearfix">
+		<h2><%= topic_link(topic) %></h2>
+		<div class="total">
+			<div class="part" style="width: <%= bar_with(topic.amount(current_year), @grand_total) %>px"></div>
+			<div class="part_label"><%= ratio(topic.amount(current_year), @grand_total) %></div>
+			<div class="total_money_label"><%= number_to_currency topic.amount(current_year) %></div>
+		</div>
+	</div>
+	<% end %>
+</section>

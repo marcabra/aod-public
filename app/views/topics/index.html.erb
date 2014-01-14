@@ -11,9 +11,15 @@
 			<div class="nav_end"></div>
 		</div>
 	</header>
+	
+	<% if @parent.present? %>
+	<div class="breadcrumb">
+	  <%= link_to 'Todos los temas', topics_path %> > <%= @parent.name %>
+	</div>
+	<% end %>	
 
   <% @topics.each do |topic| %>
-	<div class="barchart_element clearfix">
+	<div class="barchart_element clearfix <%= 'sub_theme' unless topic.root? %>">
 		<h2><%= topic_link(topic) %></h2>
 		<div class="total">
 			<div class="part" style="width: <%= bar_with(topic.amount(current_year), @grand_total) %>px"></div>

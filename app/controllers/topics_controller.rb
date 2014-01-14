@@ -1,6 +1,7 @@
 class TopicsController < ApplicationController
   def index
-    @topics = params[:parent].present? ? Topic.find(params[:parent]).children : Topic.roots
+    @parent = Topic.find(params[:parent]) if params[:parent].present?
+    @topics = @parent.nil? ? Topic.roots : @parent.children
     
     @topics.delete_if { |t| t.amount(current_year) == 0 }
     @grand_total = @topics.sum { |t| t.amount(current_year) }

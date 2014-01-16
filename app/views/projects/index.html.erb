@@ -1,6 +1,15 @@
-<section id="projects">
-  <header>
-		<h1>Proyectos a los que se dedica la Ayuda Oficial al Desarrollo en <%= current_year %></h1>
+<section id="themes">
+  <header class="clearfix">
+		<h1>Proyectos a los que se dedica la Ayuda Oficial al Desarrollo</h1>
+		<div class="data_filter map_aid_dates">
+			Año: 
+			<ul>
+			  <% (2007..2012).each do |year| %>
+				  <li class="<%= (current_year.to_i==year) ? 'active' : ' ' %>"><%= link_to year, projects_path(year: year) %></li>
+				<% end %>
+			</ul>			
+			<div class="nav_end"></div>
+		</div>
 	</header>
 	
   <section class="table_browse">

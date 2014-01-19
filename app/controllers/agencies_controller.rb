@@ -1,9 +1,18 @@
 class AgenciesController < ApplicationController
   def index  
-    @departments = Agency.by_kind('Administración General del Estado').by_year(current_year).group("agencies.id").order("sum(aids.paid_amount) desc").limit(10)
-    @regions = Agency.by_kind('Comunidades Autónomas').by_year(current_year).group("agencies.id").order("sum(aids.paid_amount) desc").limit(10)
-    @town_halls = Agency.joins(:aids).by_kind('Entidades Locales').by_year(current_year).group("agencies.id").order("sum(aids.paid_amount) desc").limit(10)
-    @universities = Agency.by_kind('Universidades').by_year(current_year).group("agencies.id").order("sum(aids.paid_amount) desc").limit(10)
+    if params[:organism].present?
+      @agencies = Agency.by_organism(params[:organism]).by_year(current_year).group("agencies.id").order("sum(aids.paid_amount) desc").having("sum(aids.paid_amount)>0").limit(25)
+      @grand_total = @agencies.sum { |a| a.amount(current_year) }
+    elsif params[:kind].present?
+      @organisms = Agency.by_kind(params[:kind]).by_year(current_year).group("organism").order("sum(aids.paid_amount) desc").sum("aids.paid_amount")
+      @grand_total = @organisms.values.sum
+    else
+      @departments = Agency.by_kind('Administración General del Estado').by_year(current_year).sum("aids.paid_amount")
+      @regions = Agency.by_kind('Comunidades Autónomas').by_year(current_year).sum("aids.paid_amount")
+      @town_halls = Agency.by_kind('Entidades Locales').by_year(current_year).sum("aids.paid_amount")
+      @universities = Agency.by_kind('Universidades').by_year(current_year).sum("aids.paid_amount")
+      @grand_total = @departments + @regions + @town_halls + @universities
+    end
   end
 
   def show
@@ -16,3 +25,4 @@ class AgenciesController < ApplicationController
     gon.aids = @agency.aids.group("year").select("cast(year as varchar), sum(aids.paid_amount) as amount")
   end
 end
+

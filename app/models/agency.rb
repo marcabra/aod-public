@@ -4,6 +4,7 @@ class Agency < ActiveRecord::Base
   has_many :regions, through: :projects
   
   scope :by_kind, lambda { |kind| where("organism_kind = ?", kind) }
+  scope :by_organism, lambda { |organism| where("organism = ?", organism) }
   scope :by_year, lambda { |year| joins(:aids).where("aids.year = ?", year) }
   
   def amount(year)

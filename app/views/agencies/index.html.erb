@@ -1,56 +1,88 @@
-<section id="organisms">
-	<header>
+<section id="themes">
+	<header class="clearfix">
 		<h1>Organismos que dedican recursos a la Ayuda Oficial al Desarrollo</h1>
-	</header>
-
-	<section class="clearfix">
-		<div class="data_filter clearfix">
+		<div class="data_filter map_aid_dates">
 			Año: 
 			<ul>
 			  <% (2007..2012).each do |year| %>
 				  <li class="<%= (current_year.to_i==year) ? 'active' : ' ' %>"><%= link_to year, agencies_path(year: year) %></li>
 				<% end %>
-			</ul>
+			</ul>			
+			<div class="nav_end"></div>
 		</div>
+	</header>
+	
+	<% if @agencies.present? %>
+  	<div class="breadcrumb">
+  	  <%= link_to 'Todos las agencias', agencies_path %> > <%= link_to params[:kind], agencies_path(kind: params[:kind]) %> > <%= params[:organism] %>
+  	</div>
 
-		<div class="col-1-4">
-			<h2 class="organisms">Ministerios</h2>
-			<ul>
-			  <% @departments.each do |agency| %>
-		      <li><%= link_to agency.name, agency %></li>
-			  <% end %>
-				<li><%= link_to 'ver todos', projects_path %></li>
-			</ul>
-		</div>
+    <% @agencies.each do |agency| %>
+  	<div class="barchart_element clearfix sub_theme">
+  		<h2><%= link_to agency.name, agency %></h2>
+  		<div class="total">
+  			<div class="part" style="width: <%= bar_with(agency.amount(current_year), @grand_total) %>px"></div>
+  			<div class="part_label"><%= ratio(agency.amount(current_year), @grand_total) %></div>
+  			<div class="total_money_label"><%= number_to_currency agency.amount(current_year) %></div>
+  		</div>
+  	</div>
+  	<% end %>
+  	
+	<% elsif @organisms.present? %>
+	
+  	<div class="breadcrumb">
+  	  <%= link_to 'Todos las agencias', agencies_path %> > <%= params[:kind] %>
+  	</div>
 
-		<div class="col-2-4">
-			<h2 class="organisms">Comunidades Autónomas</h2>			
-			<ul>
-			  <% @regions.each do |agency| %>
-			    <li><%= link_to agency.name, agency %></li>
-			  <% end %>
-				<li><%= link_to 'ver todos', projects_path %></li>
-			</ul>
-		</div>
+    <% @organisms.each_pair do |organism, amount| %>
+  	<div class="barchart_element clearfix sub_theme">
+  		<h2><%= link_to organism, agencies_path(organism: organism, kind: params[:kind]) %></h2>
+  		<div class="total">
+  			<div class="part" style="width: <%= bar_with(amount, @grand_total) %>px"></div>
+  			<div class="part_label"><%= ratio(amount, @grand_total) %></div>
+  			<div class="total_money_label"><%= number_to_currency amount %></div>
+  		</div>
+  	</div>
+  	<% end %>
 
-		<div class="col-3-4">
-			<h2 class="organisms" >Ayuntamientos</h2>
-			<ul>
-			  <% @town_halls.each do |agency| %>
-		      <li><%= link_to agency.name, agency %></li>
-			  <% end %>
-				<li><%= link_to 'ver todos', projects_path %></li>
-			</ul>
-		</div>
+	<% else %>
+		
+  	<div class="barchart_element clearfix">
+  		<h2><%= link_to 'Ministerios', agencies_path(kind: 'Administración General del Estado') %></h2>
+  		<div class="total">
+  			<div class="part" style="width: <%= bar_with(@departments, @grand_total) %>px"></div>
+  			<div class="part_label"><%= ratio(@departments, @grand_total) %></div>
+  			<div class="total_money_label"><%= number_to_currency @departments %></div>
+  		</div>
+  	</div>
 
-		<div class="col-4-4">
-			<h2 class="organisms">Universidades</h2>
-			<ul>
-			  <% @universities.each do |agency| %>
-		      <li><%= link_to agency.name, agency %></li>
-			  <% end %>
-				<li><%= link_to 'ver todos', projects_path %></li>
-			</ul>
-		</div>
-	</section>
+  	<div class="barchart_element clearfix">
+  		<h2><%= link_to 'Comunidades Autónomas', agencies_path(kind: 'Comunidades Autónomas') %></h2>
+  		<div class="total">
+  			<div class="part" style="width: <%= bar_with(@regions, @grand_total) %>px"></div>
+  			<div class="part_label"><%= ratio(@regions, @grand_total) %></div>
+  			<div class="total_money_label"><%= number_to_currency @regions %></div>
+  		</div>
+  	</div>
+
+  	<div class="barchart_element clearfix">
+  		<h2><%= link_to 'Ayuntamientos', agencies_path(kind: 'Entidades Locales') %></h2>
+  		<div class="total">
+  			<div class="part" style="width: <%= bar_with(@town_halls, @grand_total) %>px"></div>
+  			<div class="part_label"><%= ratio(@town_halls, @grand_total) %></div>
+  			<div class="total_money_label"><%= number_to_currency @town_halls %></div>
+  		</div>
+  	</div>
+
+  	<div class="barchart_element clearfix">
+  		<h2><%= link_to 'Universidades', agencies_path(kind: 'Universidades') %></h2>
+  		<div class="total">
+  			<div class="part" style="width: <%= bar_with(@universities, @grand_total) %>px"></div>
+  			<div class="part_label"><%= ratio(@universities, @grand_total) %></div>
+  			<div class="total_money_label"><%= number_to_currency @universities %></div>
+  		</div>
+  	</div>
+
+	<% end %>	
+
 </section>

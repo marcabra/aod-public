@@ -1,6 +1,6 @@
 module ApplicationHelper
   def ratio(amount, grand_total)
-    number_to_percentage (amount.to_f / grand_total.to_f) * 100, precision: 2
+    number_to_percentage (amount.to_f / grand_total.to_f) * 100, precision: 0
   end
   
   def bar_with(amount, grand_total)

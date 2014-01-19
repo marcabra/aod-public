@@ -23,7 +23,7 @@
   		<div class="total">
   			<div class="part" style="width: <%= bar_with(agency.amount(current_year), @grand_total) %>px"></div>
   			<div class="part_label"><%= ratio(agency.amount(current_year), @grand_total) %></div>
-  			<div class="total_money_label"><%= number_to_currency agency.amount(current_year) %></div>
+  			<div class="total_money_label"><%= number_to_human agency.amount(current_year), precision: 2 %></div>
   		</div>
   	</div>
   	<% end %>
@@ -40,7 +40,7 @@
   		<div class="total">
   			<div class="part" style="width: <%= bar_with(amount, @grand_total) %>px"></div>
   			<div class="part_label"><%= ratio(amount, @grand_total) %></div>
-  			<div class="total_money_label"><%= number_to_currency amount %></div>
+  			<div class="total_money_label"><%= number_to_human amount, precision: 2 %></div>
   		</div>
   	</div>
   	<% end %>
@@ -52,7 +52,7 @@
   		<div class="total">
   			<div class="part" style="width: <%= bar_with(@departments, @grand_total) %>px"></div>
   			<div class="part_label"><%= ratio(@departments, @grand_total) %></div>
-  			<div class="total_money_label"><%= number_to_currency @departments %></div>
+  			<div class="total_money_label"><%= number_to_human @departments, precision: 2 %></div>
   		</div>
   	</div>
 
@@ -61,7 +61,7 @@
   		<div class="total">
   			<div class="part" style="width: <%= bar_with(@regions, @grand_total) %>px"></div>
   			<div class="part_label"><%= ratio(@regions, @grand_total) %></div>
-  			<div class="total_money_label"><%= number_to_currency @regions %></div>
+  			<div class="total_money_label"><%= number_to_human @regions, precision: 2 %></div>
   		</div>
   	</div>
 
@@ -70,7 +70,7 @@
   		<div class="total">
   			<div class="part" style="width: <%= bar_with(@town_halls, @grand_total) %>px"></div>
   			<div class="part_label"><%= ratio(@town_halls, @grand_total) %></div>
-  			<div class="total_money_label"><%= number_to_currency @town_halls %></div>
+  			<div class="total_money_label"><%= number_to_human @town_halls, precision: 2 %></div>
   		</div>
   	</div>
 
@@ -79,7 +79,7 @@
   		<div class="total">
   			<div class="part" style="width: <%= bar_with(@universities, @grand_total) %>px"></div>
   			<div class="part_label"><%= ratio(@universities, @grand_total) %></div>
-  			<div class="total_money_label"><%= number_to_currency @universities %></div>
+  			<div class="total_money_label"><%= number_to_human @universities, precision: 2 %></div>
   		</div>
   	</div>
 

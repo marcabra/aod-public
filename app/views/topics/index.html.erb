@@ -24,7 +24,7 @@
 		<div class="total">
 			<div class="part" style="width: <%= bar_with(topic.amount(current_year), @grand_total) %>px"></div>
 			<div class="part_label"><%= ratio(topic.amount(current_year), @grand_total) %></div>
-			<div class="total_money_label"><%= number_to_currency topic.amount(current_year) %></div>
+			<div class="total_money_label"><%= number_to_human topic.amount(current_year), precision: 2 %></div>
 		</div>
 	</div>
 	<% end %>

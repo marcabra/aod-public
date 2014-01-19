@@ -4,6 +4,7 @@ class TopicsController < ApplicationController
     @topics = @parent.nil? ? Topic.roots : @parent.children
     
     @topics.delete_if { |t| t.amount(current_year) == 0 }
+    @topics = @topics.sort! { |a,b| a.amount(current_year) <=> b.amount(current_year) }.reverse
     @grand_total = @topics.sum { |t| t.amount(current_year) }
     
     gon.current_year = @current_year

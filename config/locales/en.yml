@@ -13,7 +13,7 @@ en:
       decimal_units:
         format: '%n %u'
         units:
-          billion: B
+          billion: MM
           million: M
           thousand: mil
           unit: ''

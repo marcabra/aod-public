@@ -34,7 +34,7 @@
   	  <%= link_to 'Todos las agencias', agencies_path %> > <%= params[:kind] %>
   	</div>
 
-    <% @organisms.each_pair do |organism, amount| %>
+    <% @organisms.each do |organism, amount| %>
   	<div class="barchart_element clearfix sub_theme">
   		<h2><%= link_to organism, agencies_path(organism: organism, kind: params[:kind]) %></h2>
   		<div class="total">

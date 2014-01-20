@@ -5,7 +5,7 @@ class AgenciesController < ApplicationController
       @grand_total = @agencies.sum { |a| a.amount(current_year) }
     elsif params[:kind].present?
       @organisms = Agency.by_kind(params[:kind]).by_year(current_year).group("organism").order("sum(aids.paid_amount) desc").sum("aids.paid_amount")
-      @grand_total = @organisms.values.sum
+      @grand_total = @organisms.values.sum{ |v| v.to_i }
     else
       @departments = Agency.by_kind('Administración General del Estado').by_year(current_year).sum("aids.paid_amount")
       @regions = Agency.by_kind('Comunidades Autónomas').by_year(current_year).sum("aids.paid_amount")

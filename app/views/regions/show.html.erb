@@ -44,10 +44,12 @@
 			<th>Créditos reembolsados <i class="fa fa-info-circle" title="Créditos reembolsados"></i></th>
 			<td><%= number_to_currency @region.returned_amount(current_year) %></td>
 		</tr>
+		<% if @region.amount(current_year) > 0 %>
 		<tr>
 			<th>Ranking países/regiones receptores</th>
 			<td><%= @region.rank(current_year) %> de <%= Region.count(current_year) %></td>
 		</tr>
+	  <% end %>
 		<tr class="sep">
 			<th>Total 2007-2012</th>
 			<td>

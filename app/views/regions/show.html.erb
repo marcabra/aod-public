@@ -29,19 +29,19 @@
 			<td><%= number_to_currency @region.amount(current_year) %></td>
 		</tr>
 		<tr>
-			<th>Bilateral <i class="fa fa-info-circle" title="Wadus Wadus"></i></th>
+			<th>Bilateral <i class="fa fa-info-circle" title="Ayuda bilateral"></i></th>
 			<td><%= number_to_currency @region.amount(current_year, 'Bilateral') %></td>
 		</tr>
 		<tr>
-			<th>Multibilateral <i class="fa fa-info-circle" title="Wadus Wadus"></i></th>
-			<td><%= number_to_currency @region.amount(current_year, 'multibilateral') %></td>
+			<th>Multibilateral <i class="fa fa-info-circle" title="Ayuda multibilateral"></i></th>
+			<td><%= number_to_currency @region.amount(current_year, 'Multibilateral') %></td>
 		</tr>
 		<tr>
-			<th>Multilateral <i class="fa fa-info-circle" title="Wadus Wadus"></i></th>
-			<td><%= number_to_currency @region.amount(current_year, 'multilateral') %></td>
+			<th>Multilateral <i class="fa fa-info-circle" title="Ayuda multilateral"></i></th>
+			<td><%= number_to_currency @region.amount(current_year, 'Multilateral') %></td>
 		</tr>
 		<tr class="sep">
-			<th>Créditos reembolsados <i class="fa fa-info-circle" title="Wadus Wadus"></i></th>
+			<th>Créditos reembolsados <i class="fa fa-info-circle" title="Créditos reembolsados"></i></th>
 			<td><%= number_to_currency @region.returned_amount(current_year) %></td>
 		</tr>
 		<tr>

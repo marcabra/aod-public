@@ -45,7 +45,7 @@
 			<td><%= number_to_currency @region.returned_amount(current_year) %></td>
 		</tr>
 		<tr>
-			<th>Ranking países receptores</th>
+			<th>Ranking países/regiones receptores</th>
 			<td><%= @region.rank(current_year) %> de <%= Region.count(current_year) %></td>
 		</tr>
 		<tr class="sep">

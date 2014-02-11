@@ -1,5 +1,7 @@
 en:
   number:
+    format:
+      separator: ','
     currency:
       format:
         delimiter: '.'
@@ -13,8 +15,12 @@ en:
       decimal_units:
         format: '%n %u'
         units:
-          billion: MM
-          million: M
-          thousand: mil
-          unit: ''
+          billion: B
+          million: MM
+          thousand: M
+          unit: mil
+    percentage:
+      format:
+        strip_insignificant_zeros: true
+        
 

@@ -1,7 +1,8 @@
 module ApplicationHelper
-  def ratio(amount, grand_total)
+  def ratio(amount, grand_total, options={})
     return '- %' if grand_total.to_f == 0
-    number_to_percentage (amount.to_f / grand_total.to_f) * 100, precision: 2
+    options[:precision] ||= 2
+    number_to_percentage (amount.to_f / grand_total.to_f) * 100, precision: options[:precision]
   end
   
   def bar_with(amount, grand_total)

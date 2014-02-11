@@ -23,10 +23,12 @@
 			</th>
 			<td><%= number_to_currency @agency.amount(current_year) %></td>
 		</tr>
+		<% if @agency.amount(current_year) > 0 %>
 		<tr>
 			<th>Ranking organismos</th>
 			<td><%= @agency.rank(current_year) %> de <%= Agency.count(current_year) %></td>
 		</tr>
+		<% end %>
 		<tr>
 			<th>Dependiente de</th>
 			<td><%= @agency.organism %></td>

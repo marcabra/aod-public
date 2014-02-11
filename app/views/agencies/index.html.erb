@@ -21,9 +21,9 @@
   	<div class="barchart_element clearfix sub_theme">
   		<h2><%= link_to agency.name, agency %></h2>
   		<div class="total">
-  			<div class="part" style="width: <%= bar_with(agency.amount(current_year).to_f/10**3, @grand_total) %>px"></div>
-  			<div class="part_label"><%= ratio(agency.amount(current_year).to_f/10**3, @grand_total, {precision: 4}) %></div>
-  			<div class="total_money_label"><%= number_to_human agency.amount(current_year).to_f/10**3, precision: 2 %></div>
+  			<div class="part" style="width: <%= bar_with(to_thousands(agency.amount(current_year)), @grand_total) %>px"></div>
+  			<div class="part_label"><%= ratio(to_thousands(agency.amount(current_year)), @grand_total, {precision: 4}) %></div>
+  			<div class="total_money_label"><%= number_to_human to_thousands(agency.amount(current_year)), precision: 2 %></div>
   		</div>
   	</div>
   	<% end %>

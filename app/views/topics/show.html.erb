@@ -29,7 +29,7 @@
 		<% if @topic.amount(current_year) > 0 %>
 		<tr>
 			<th>Ranking temas</th>
-			<td>#<%= @topic.rank(current_year) %></td>
+			<td><%= @topic.rank(current_year) %> de <%= Topic.count(current_year) %></td>
 		</tr>
 		<% end %>
 		</table>

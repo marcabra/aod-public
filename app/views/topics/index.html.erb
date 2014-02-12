@@ -24,8 +24,20 @@
 		<div class="total">
 			<div class="part" style="width: <%= bar_with(to_thousands(topic.amount(current_year)), @grand_total) %>px"></div>
 			<div class="part_label"><%= ratio(to_thousands(topic.amount(current_year)), @grand_total) %></div>
-			<div class="total_money_label"><%= number_to_human to_thousands(topic.amount(current_year)), precision: 2 %></div>
+			<div class="total_money_label"><%= number_to_human to_thousands(topic.amount(current_year)) %></div>
 		</div>
 	</div>
 	<% end %>
+	
+	<% if @topics.count > 1 %>
+	<div class="barchart_element clearfix">
+		<h2>Total</h2>
+		<div class="total">
+			<div class="part" style="width: 380px"></div>
+			<div class="part_label">100%</div>
+			<div class="total_money_label"><%= number_to_human @grand_total %></div>
+		</div>
+	</div>
+	<% end %>
+
 </section>

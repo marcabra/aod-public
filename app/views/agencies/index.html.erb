@@ -28,6 +28,17 @@
   	</div>
   	<% end %>
   	
+  	<% if @agencies.to_a.count > 1 %>
+  	<div class="barchart_element clearfix sub_theme">
+  		<h2>Total</h2>
+  		<div class="total">
+  			<div class="part" style="width: 380px"></div>
+  			<div class="part_label">100%</div>
+  			<div class="total_money_label"><%= number_to_human @grand_total %></div>
+  		</div>
+  	</div>
+  	<% end %>
+  	
 	<% elsif @organisms.present? %>
 	
   	<div class="breadcrumb">
@@ -41,6 +52,17 @@
   			<div class="part" style="width: <%= bar_with(amount, @grand_total) %>px"></div>
   			<div class="part_label"><%= ratio(amount, @grand_total, { precision: 4 }) %></div>
   			<div class="total_money_label"><%= number_to_human amount, precision: 2 %></div>
+  		</div>
+  	</div>
+  	<% end %>
+  	
+  	<% if @organisms.count > 1 %>
+  	<div class="barchart_element clearfix sub_theme">
+  		<h2>Total</h2>
+  		<div class="total">
+  			<div class="part" style="width: 380px"></div>
+  			<div class="part_label">100%</div>
+  			<div class="total_money_label"><%= number_to_human @grand_total %></div>
   		</div>
   	</div>
   	<% end %>
@@ -80,6 +102,15 @@
   			<div class="part" style="width: <%= bar_with(@universities, @grand_total) %>px"></div>
   			<div class="part_label"><%= ratio(@universities, @grand_total) %></div>
   			<div class="total_money_label"><%= number_to_human @universities, precision: 2 %></div>
+  		</div>
+  	</div>
+
+  	<div class="barchart_element clearfix">
+  		<h2>Total</h2>
+  		<div class="total">
+  			<div class="part" style="width: 380px"></div>
+  			<div class="part_label">100%</div>
+  			<div class="total_money_label"><%= number_to_human @grand_total %></div>
   		</div>
   	</div>
 

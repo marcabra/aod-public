@@ -2,7 +2,6 @@ $ ->
   if $('#dataTable').length
 	  $('#dataTable').dataTable
 	    sPaginationType: "full_numbers"
-	    bJQueryUI: true
 	    bProcessing: true
 	    bServerSide: true
 	    oSearch: { sSearch: gon.defaultSearch }

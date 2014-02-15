@@ -2,21 +2,14 @@ $cs-green: #99CC00;
 $cs-brown: #D1632A;
 $cs-blue: #006699;
 $cs-darkgrey: #666666; 
-
 $cs-brown-soft: #FBF0EB; 
-
 $cs-white: #FFF;
 $cs-text-soft: #A2A2A2; 
 $cs-text: #8C8C8C; 
 $cs-link: #006699;
 
-
 $ff-default: "museo-sans";
 $ff-titles: "museo-sans";
-$ff-subtitles: "museo-sans";
-
-
-
 
 .clearfix {
     zoom:1;
@@ -162,7 +155,6 @@ section#home-intro {
 			list-style-type: none; 
 			margin: 0 0 .25em 0; 
 			padding: 0; 
-			font-family: $ff-subtitles;
 		}
 	}
 }
@@ -209,7 +201,7 @@ section {
 			}
 			p {
 				margin: 0;
-				font: .9em $ff-subtitles;
+				font-size: .9em;
 			}
 		}
 	}
@@ -244,19 +236,14 @@ section {
 				z-index: 2;
 				padding: 0 .3em;
 				font-size: .9em;
-				font-family: $ff-subtitles;
-
 				a { 
 					color: #FFF;
 				}
 			}
 
-
 		}
 	}
 }
-
-
 
 .map_aid_dates {
 	@extend .clearfix;
@@ -400,7 +387,7 @@ section#country {
 	#country_overview {
 		@extend .clearfix;
 		margin: 0 0 2em 0;
-		#graph_country {
+		.chart {
 			float: right; 
 			#graph_country_notes {
 				text-align: right; 
@@ -565,12 +552,10 @@ section#proyect {
 	}
 }
 
-
 h2.countries { color: $cs-blue; }
 h2.proyects { color: $cs-darkgrey; }
 h2.themes { color: $cs-brown; }
 h2.organisms { color: $cs-green; }
-
 
 section#text_page {
 	@extend .clearfix;
@@ -611,9 +596,6 @@ section#text_page {
 	}
 }
 
-
-
-
 footer { 
 	position: relative;
 	@include border-soft(top);
@@ -644,7 +626,6 @@ footer {
 	box-shadow: 0 0 10px #aaa;
 	background: #FFF; 
 	border-radius: 4px; 
-	font-family: $ff-default, arial;
 	font-size: .8em; 
 	min-width: 200px; 
 }

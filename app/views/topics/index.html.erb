@@ -31,13 +31,17 @@
 	
 	<% if @topics.count > 1 %>
 	<div class="barchart_element clearfix">
-		<h2>Total</h2>
+		<h2>Total ayuda bruta</h2>
 		<div class="total">
-			<div class="part" style="width: 380px"></div>
-			<div class="part_label">100%</div>
+			<div class="part" style="width:400px"></div>
+			<div class="part_label" style="padding-left:0">100%</div>
 			<div class="total_money_label"><%= number_to_human @grand_total %></div>
 		</div>
 	</div>
 	<% end %>
+
+	<div style="text-align:right; padding-right:70px;">
+	  <small>MM = mil millones €; M = millones €</small>
+	</div>
 
 </section>

@@ -44,12 +44,13 @@ namespace :export do
   
   desc 'Export projects'
   task :projects, [:year] => :environment do |t, args|
-    CSV.open("proyectos_#{args[:year]}.csv", "wb", col_sep: ';') do |csv|
-      csv << ['proyecto', 'descripción', 'fecha inicio', 'fecha fin', 'duración', 'país', 'localización', 'importe comprometido', 'importe desembolsado', 'importe devuelto', 'tipo de ayuda', 'organismo', 'agencia', 'tema', 'tipo beneficiarios', 'número beneficiarios', 'mujeres beneficiarias', 'resultado']
+    CSV.open("proyectos_#{args[:year]}.csv", "wb", col_sep: ';', force_quotes: true) do |csv|
+      csv << ['año', 'proyecto', 'descripción', 'fecha inicio', 'fecha fin', 'duración', 'país', 'àrea', 'renta', 'localización', 'importe comprometido', 'importe desembolsado', 'importe devuelto', 'vía de canalización', 'odm', 'meta odm', 'organismo', 'tipo de organismo', 'agencia', 'tema', 'código tema', 'tipo beneficiarios', 'número beneficiarios', 'mujeres beneficiarias', 'resultado', 'número intervención', 'código interno', 'código app']
       
       projects = Project.by_year(args[:year])
       projects.each do |p|
-        csv << [p.title, p.description, p.started_at, p.ended_at, p.duration, p.region.name, p.location, p.committed_amount, p.paid_amount, p.returned_amount, p.aid_kind, p.agencies.first.organism, p.agencies.first.name, p.topic.name, p.beneficiaries_kind, p.beneficiaries_count, p.beneficiaries_women, p.result]
+        agency = p.agencies.first
+        csv << [args[:year], p.title, p.description, p.started_at, p.ended_at, p.duration, p.region.name, p.region.area, p.region.incomes.first.code, p.location, p.committed_amount.to_s.gsub('.', ','), p.paid_amount.to_s.gsub('.', ','), p.returned_amount.to_s.gsub('.', ','), p.aid_via, p.odm, p.meta_odm, agency.organism, agency.organism_kind, p.agencies.first.name, p.topic.name, p.topic.code, p.beneficiaries_kind, p.beneficiaries_count, p.beneficiaries_women, p.result, p.intervention_number, p.internal_code, p.id]
       end
     end    
   end  
